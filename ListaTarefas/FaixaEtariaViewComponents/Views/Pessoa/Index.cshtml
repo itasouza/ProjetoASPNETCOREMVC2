@@ -1,0 +1,15 @@
+﻿@model IEnumerable<FaixaEtaria.Models.Pessoa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-info">Create New</a>
+</p>
+
+@await Component.InvokeAsync("Adolescente")
+@await Component.InvokeAsync("Adultos")
+@await Component.InvokeAsync("Idosos")
