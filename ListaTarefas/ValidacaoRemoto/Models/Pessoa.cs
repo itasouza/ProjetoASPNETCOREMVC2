@@ -13,6 +13,7 @@ namespace ValidacaoDados.Models
         public int PessoaId { get; set; }
         [Required(ErrorMessage ="Campo obrigatório")]
         [StringLength(20,ErrorMessage ="Use menos caracteres")]
+
         [Remote("UsuarioExisteAsync","Pessoas")]
         public string Nome { get; set; }
 
