@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FaixaEtariaViewComponents",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PesquisaCrypto", "PesquisaCrypto\PesquisaCrypto.csproj", "{14D406C6-8CCC-49CE-9F3E-89D681C66BE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestantoAreas", "TestantoAreas\TestantoAreas.csproj", "{F4E1D238-FBAA-4E6E-A237-26D24FC8E197}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestantoAreas", "TestantoAreas\TestantoAreas.csproj", "{F4E1D238-FBAA-4E6E-A237-26D24FC8E197}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidacaoDados", "ValidacaoDados\ValidacaoDados.csproj", "{B2710274-DDA6-4F4D-850E-05A439B00398}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidacaoRemoto", "ValidacaoRemoto\ValidacaoRemoto.csproj", "{65C85866-F9DF-43DA-9C9E-65D7CFAB0E72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{F4E1D238-FBAA-4E6E-A237-26D24FC8E197}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4E1D238-FBAA-4E6E-A237-26D24FC8E197}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4E1D238-FBAA-4E6E-A237-26D24FC8E197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2710274-DDA6-4F4D-850E-05A439B00398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2710274-DDA6-4F4D-850E-05A439B00398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2710274-DDA6-4F4D-850E-05A439B00398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2710274-DDA6-4F4D-850E-05A439B00398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65C85866-F9DF-43DA-9C9E-65D7CFAB0E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65C85866-F9DF-43DA-9C9E-65D7CFAB0E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65C85866-F9DF-43DA-9C9E-65D7CFAB0E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65C85866-F9DF-43DA-9C9E-65D7CFAB0E72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
