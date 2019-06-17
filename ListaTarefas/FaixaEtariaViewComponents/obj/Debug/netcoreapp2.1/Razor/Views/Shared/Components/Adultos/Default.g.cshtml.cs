@@ -67,7 +67,7 @@ using FaixaEtaria.Models;
             WriteLiteral("</span></div>\r\n\r\n    <div class=\"panel panel-body\">\r\n\r\n        <p>\r\n            ");
             EndContext();
             BeginContext(259, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d7b526ebf4040d780be67cc04f287bc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0935d885f2544a12b0e6758721676469", async() => {
                 BeginContext(282, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -138,7 +138,7 @@ using FaixaEtaria.Models;
             WriteLiteral("\r\n                        </td>\r\n                        <td>\r\n                            ");
             EndContext();
             BeginContext(1136, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0311982b3b1492883ccb9798d883861", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0bb5d60f3f514a11a476561db2938df4", async() => {
                 BeginContext(1187, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -173,7 +173,7 @@ using FaixaEtaria.Models;
             WriteLiteral(" |\r\n                            ");
             EndContext();
             BeginContext(1227, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a63e241a04d48d0af07dc37bb178fbe", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3dcdebf64bc641b1aedeb5275d97c38a", async() => {
                 BeginContext(1281, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -208,7 +208,7 @@ using FaixaEtaria.Models;
             WriteLiteral(" |\r\n                            ");
             EndContext();
             BeginContext(1324, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b922ebf06a948bfb9b556c26dcf722c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b04410a7239e4fe48a9b108ecea099d4", async() => {
                 BeginContext(1377, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

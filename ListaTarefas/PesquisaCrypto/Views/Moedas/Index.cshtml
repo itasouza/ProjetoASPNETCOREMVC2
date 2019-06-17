@@ -1,0 +1,136 @@
+﻿@model IEnumerable<PesquisaCrypto.Models.Moeda>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-primary">Nova Moeda</a>
+</p>
+
+<div>
+
+    <div class="col-lg-12 well">
+        @await Component.InvokeAsync("Moedas")
+    </div>
+
+ 
+        <partial name="_Grafico" />
+ 
+
+</div>
+
+
+@section Scripts {
+
+    <script>
+
+        function PegarMoedas(dados) {
+            var quantidade = 0;
+            var moedas = [];
+            while (quantidade < dados.length) {
+                moedas.push(dados[quantidade].nome);
+                quantidade++;
+            }
+             console.log('moedas: ' + moedas)
+            return moedas;
+        }
+
+        function PegarQuantidade(dados) {
+            var quantidade = 0;
+            var valores = [];
+            while (quantidade < dados.length) {
+                valores.push(dados[quantidade].quantidade);
+                quantidade++;
+            }
+            console.log('quantidade:' + valores)
+            return valores;
+        }
+
+        function PegarCores(quantidade) {
+            var cores = [];
+            while (quantidade >= 0) {
+                var r = Math.floor(Math.random() * 255);
+                var g = Math.floor(Math.random() * 255);
+                var b = Math.floor(Math.random() * 255);
+
+                cores.push("rgb(" + r + "," + g + "," + b + ")");
+                quantidade--;
+            }
+            console.log("cores :" + cores)
+            return cores;
+        }
+ 
+        $.ajax({
+            type: "GET",
+            url: "Moedas/DadosGrafico",
+            success: function (dados) {
+                console.log(dados)
+                new Chart(document.getElementById("grafico"), {
+                    type: "doughnut",
+                    data: {
+                        labels: PegarMoedas(dados),
+                        datasets: [{
+                            labels: "Quantidade",
+                            borderWidth: 2,
+                            backgroundColor: PegarCores(dados.length),
+                            data: PegarQuantidade(dados)
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        legend: { position: 'top' },
+                        title: {
+                            display: true,
+                            text: "Quantidade de cada moeda"
+
+                        },
+                        animation: {
+                            animateScale: true,
+                            animateRotate: true
+                        }
+                    }
+                })
+            }
+        });
+
+
+
+        $.ajax({
+            type: "GET",
+            url: "Moedas/DadosGrafico",
+            success: function (dados) {
+                console.log(dados)
+                new Chart(document.getElementById("grafico2"), {
+                    type: "pie",
+                    data: {
+                        labels: PegarMoedas(dados),
+                        datasets: [{
+                            labels: "Quantidade",
+                            borderWidth: 2,
+                            backgroundColor: PegarCores(dados.length),
+                            data: PegarQuantidade(dados)
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        legend: { position: 'top' },
+                        title: {
+                            display: true,
+                            text: "Quantidade de cada moeda"
+
+                        },
+                        animation: {
+                            animateScale: true,
+                            animateRotate: true
+                        }
+                    }
+                })
+            }
+        });
+
+    </script>
+
+}
+

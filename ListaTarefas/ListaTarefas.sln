@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListaTarefas", "ListaTarefa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ajax", "Ajax\Ajax.csproj", "{0003E13A-7149-49B1-84F2-5748E598E190}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaixaEtaria", "FaixaEtaria\FaixaEtaria.csproj", "{6ADEC909-2CB1-455F-8BF3-06610499D8EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FaixaEtaria", "FaixaEtaria\FaixaEtaria.csproj", "{6ADEC909-2CB1-455F-8BF3-06610499D8EF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FaixaEtariaViewComponents", "FaixaEtariaViewComponents\FaixaEtariaViewComponents.csproj", "{E6943E96-AF05-493F-BDD3-44CD2C1810FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PesquisaCrypto", "PesquisaCrypto\PesquisaCrypto.csproj", "{14D406C6-8CCC-49CE-9F3E-89D681C66BE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E6943E96-AF05-493F-BDD3-44CD2C1810FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6943E96-AF05-493F-BDD3-44CD2C1810FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6943E96-AF05-493F-BDD3-44CD2C1810FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D406C6-8CCC-49CE-9F3E-89D681C66BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D406C6-8CCC-49CE-9F3E-89D681C66BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D406C6-8CCC-49CE-9F3E-89D681C66BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D406C6-8CCC-49CE-9F3E-89D681C66BE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
