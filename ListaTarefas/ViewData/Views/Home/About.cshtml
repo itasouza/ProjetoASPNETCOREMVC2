@@ -1,4 +1,6 @@
-﻿
+﻿@using ViewData.Models
+
+
 @{
     ViewData["Title"] = "About";
 }
@@ -8,10 +10,11 @@
 <p>Use this area to provide additional information.</p>
 
 
-@*@foreach (var p in ViewData["RecebeProduto"] as List<Produto>)
+
+@foreach (var p in ViewData["RecebeProduto"] as List<Produto>)
 {
     <ul>
         <li>@p.Nome</li>
         <li>@p.Preco</li>
     </ul>
-}*@
+}
