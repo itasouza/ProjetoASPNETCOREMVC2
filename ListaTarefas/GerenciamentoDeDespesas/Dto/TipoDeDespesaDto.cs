@@ -14,8 +14,7 @@ namespace GerenciamentoDeDespesas.Dto
         [Required]
         public int TipoDeDespesaId { get; set; }
 
-
-        [Remote("TipoDespesaExiste", "TipoDeDespesa")]
+        [Remote("TipoDespesaExisteAsync", "TipoDeDespesa")]
         [Required(ErrorMessage = "Nome do tipo de Despesa é obrigatório")]
         [StringLength(50, ErrorMessage = "Nome do Tipo de despesa e muito grande, tente um nome menor!")]
         [MinLength(2, ErrorMessage = "Nome do Tipo de despesa muito pequeno, tente um nome com mais de 2 caracteres!")]

@@ -63,15 +63,14 @@ namespace GerenciamentoDeDespesas.Controllers
         }
 
 
-        public async Task<JsonResult> TipoDespesaExiste(string nome)
+        //validação remota
+        public async Task<JsonResult> TipoDespesaExisteAsync(string nome)
         {
             if (await database.TipoDeDespesas.AnyAsync(td => td.Nome.ToUpper() == nome.ToUpper()))
-            {
                 return Json("Este tipo de despesa já existe!");
-            }
-
             return Json(true);
         }
+
 
 
         [HttpPost]
