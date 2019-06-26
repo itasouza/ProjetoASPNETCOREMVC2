@@ -3,133 +3,174 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GerenciamentoDeDespesas.Data;
 using GerenciamentoDeDespesas.Dto;
+using GerenciamentoDeDespesas.Models;
+using X.PagedList;
 
 namespace GerenciamentoDeDespesas.Controllers
 {
     public class TipoDeDespesaController : Controller
     {
-        private readonly ApplicationDbContext _context;
 
-        public TipoDeDespesaController(ApplicationDbContext context)
+        private readonly ApplicationDbContext database;
+
+        public TipoDeDespesaController(ApplicationDbContext database)
         {
-            _context = context;
+            this.database = database;
         }
 
-        // GET: TipoDeDespesa
+
+
+        //[HttpGet]
+        //public IActionResult Index(string busca = "", int pagina = 1, int tamanhoPagina = 5)
+        //{
+        //    var dados = database.TipoDeDespesas.OrderBy(pro => pro.TipoDeDespesaId).ToPagedList(pagina, tamanhoPagina);
+        //    ViewBag.Busca = busca;
+        //    ViewBag.TamanhoPagina = tamanhoPagina;
+
+        //    return View(dados);
+        //}
+
+
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var dados = await _context.TipoDeDespesas.ToListAsync();
+            var dados = await database.TipoDeDespesas.ToListAsync();
             return View(dados);
         }
 
-   
 
-        // GET: TipoDeDespesa/Create
-        public IActionResult Create()
+        [HttpPost]
+        public async Task<IActionResult> Index(string txtProcurar)
+        {
+            if (!String.IsNullOrEmpty(txtProcurar))
+            {
+                var dados = await database.TipoDeDespesas.Where(td => td.Nome.ToUpper().Contains(txtProcurar.ToUpper())).ToListAsync();
+                txtProcurar = "";
+                return View(dados);
+            }
+
+            return View(await database.TipoDeDespesas.ToListAsync());
+        }
+
+
+        // GET: TipoDeDespesa/NovoTipoDeDespesa
+        public IActionResult Novo()
         {
             return View();
         }
 
+
+        public async Task<JsonResult> TipoDespesaExiste(string nome)
+        {
+            if (await database.TipoDeDespesas.AnyAsync(td => td.Nome.ToUpper() == nome.ToUpper()))
+            {
+                return Json("Este tipo de despesa já existe!");
+            }
+
+            return Json(true);
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TipoDeDespesaId,Nome")] TipoDeDespesaDto tipoDeDespesaDto)
+        public IActionResult Salvar(TipoDeDespesaDto dadosTemporario)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(tipoDeDespesaDto);
-                await _context.SaveChangesAsync();
+
+                TempData["confirmacao"] = dadosTemporario.Nome + " foi cadastrado com sucesso.";
+
+                TipoDeDespesa dados = new TipoDeDespesa();
+                dados.Nome = dadosTemporario.Nome;
+                database.TipoDeDespesas.Add(dados);
+                database.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            return View(tipoDeDespesaDto);
+            else
+            {
+                return View("../TipoDeDespesa/Novo");
+            }
         }
 
-        // GET: TipoDeDespesa/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+
+        public async Task<IActionResult> Atualizar(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var tipoDeDespesaDto = await _context.TipoDeDespesaDto.FindAsync(id);
-            if (tipoDeDespesaDto == null)
+            var dados = await database.TipoDeDespesas.FindAsync(id);
+            if (dados == null)
             {
                 return NotFound();
             }
-            return View(tipoDeDespesaDto);
+
+            TipoDeDespesaDto dadosView = new TipoDeDespesaDto();
+            dadosView.TipoDeDespesaId = dados.TipoDeDespesaId;
+            dadosView.Nome = dados.Nome;
+            return View(dadosView);
         }
 
-        // POST: TipoDeDespesa/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TipoDeDespesaId,Nome")] TipoDeDespesaDto tipoDeDespesaDto)
+        public async Task<IActionResult> Atualizar(TipoDeDespesaDto dadosTemporario)
         {
-            if (id != tipoDeDespesaDto.TipoDeDespesaId)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(tipoDeDespesaDto);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TipoDeDespesaDtoExists(tipoDeDespesaDto.TipoDeDespesaId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                TempData["confirmacao"] = dadosTemporario.Nome + " foi atualizado com sucesso.";
+                var dados = await database.TipoDeDespesas.FindAsync(dadosTemporario.TipoDeDespesaId);
+                dados.Nome = dadosTemporario.Nome;
+                database.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            return View(tipoDeDespesaDto);
+            else
+            {
+                return View("../TipoDeDespesa/Atualizar");
+            }
         }
 
-        // GET: TipoDeDespesa/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+
+
+
+        public async Task<IActionResult> Deletar(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var tipoDeDespesaDto = await _context.TipoDeDespesaDto
-                .FirstOrDefaultAsync(m => m.TipoDeDespesaId == id);
-            if (tipoDeDespesaDto == null)
+            var dados = await database.TipoDeDespesas.FindAsync(id);
+            if (dados == null)
             {
                 return NotFound();
             }
 
-            return View(tipoDeDespesaDto);
+            TipoDeDespesaDto dadosView = new TipoDeDespesaDto();
+            dadosView.TipoDeDespesaId = dados.TipoDeDespesaId;
+            dadosView.Nome = dados.Nome;
+            return View(dadosView);
         }
 
-        // POST: TipoDeDespesa/Delete/5
-        [HttpPost, ActionName("Delete")]
+
+
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Deletar(int id)
         {
-            var tipoDeDespesaDto = await _context.TipoDeDespesaDto.FindAsync(id);
-            _context.TipoDeDespesaDto.Remove(tipoDeDespesaDto);
-            await _context.SaveChangesAsync();
+            var dados = await database.TipoDeDespesas.FindAsync(id);
+            TempData["confirmacao"] = dados.Nome + " foi excluido com sucesso.";
+            database.TipoDeDespesas.Remove(dados);
+            await database.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TipoDeDespesaDtoExists(int id)
-        {
-            return _context.TipoDeDespesaDto.Any(e => e.TipoDeDespesaId == id);
-        }
+
     }
 }

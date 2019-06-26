@@ -1,35 +1,99 @@
-﻿@model IEnumerable<GerenciamentoDeDespesas.Models.TipoDeDespesa>
+﻿@*@using X.PagedList.Mvc.Core;
+@model X.PagedList.PagedList<GerenciamentoDeDespesas.Models.TipoDeDespesa>*@
+@model IEnumerable<GerenciamentoDeDespesas.Models.TipoDeDespesa>
+
+
+@section Styles {
+
+    <style type="text/css">
+        #btnControle {
+          margin-left: 14px;
+        }
+    </style>
+
+}
+
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TipoDeDespesaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TipoDeDespesaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TipoDeDespesaId">Delete</a>
-            </td>
-        </tr>
+<div class="container">
+
+
+
+    @if (TempData["confirmacao"] != null)
+    {
+
+        <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>@TempData["confirmacao"]</strong>
+        </div>
+
+    }
+
+    <p id="btnControle">
+        <a asp-action="Novo" asp-controller="TipoDeDespesa" class="btn btn-outline-success">Adicionar</a>
+    </p>
+
+    <form asp-action="Index" asp-controller="TipoDeDespesa" method="post">
+
+        <div class="form-group">
+            <div class="input-group col-md-6">
+                <input class="form-control" name="txtProcurar" />
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-outline-primary"> <i class="fa fa-search-plus"></i> </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <table id="dados" class="table table-hover table-striped display responsive nowrap table-sm " cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TipoDeDespesaId</td>
+                    <td>@item.Nome</td>
+                    <td class="text-right">
+                        <a class="btn btn-outline-primary btn-sm" asp-action="Atualizar" asp-route-id="@item.TipoDeDespesaId"><i class="material-icons">Atualizar</i></a> |
+                        <a class="btn btn-outline-danger btn-sm" asp-action="Deletar" asp-route-id="@item.TipoDeDespesaId"><i class="material-icons">Deletar</i></a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <nav aria-label="Navegação de página exemplo">
+        <ul class="pagination justify-content-center">
+
+            @*@Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina, busca = ViewBag.Busca, tamanhoPagina = ViewBag.TamanhoPagina }), new X.PagedList.Mvc.Common.PagedListRenderOptionsBase
+                {
+                    LiElementClasses = new string[] { "page-item" },
+                    PageClasses = new string[] { "page-link" }
+                })*@
+
+        </ul>
+
+    </nav>
+
+
+
+</div>
+
+@section Scripts {
+    <script>
+
+    </script>
+
 }
-    </tbody>
-</table>

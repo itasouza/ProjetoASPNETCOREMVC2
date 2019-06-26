@@ -59,7 +59,7 @@ namespace GerenciamentoDeDespesas
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=TipoDeDespesa}/{action=Index}/{id?}");
             });
         }
     }
