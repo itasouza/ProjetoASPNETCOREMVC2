@@ -33,5 +33,7 @@ namespace GerenciamentoDeDespesas.Data
 
         public DbSet<GerenciamentoDeDespesas.Dto.TipoDeDespesaDto> TipoDeDespesaDto { get; set; }
 
+        public DbSet<GerenciamentoDeDespesas.Dto.SalarioDto> SalarioDto { get; set; }
+
     }
 }
