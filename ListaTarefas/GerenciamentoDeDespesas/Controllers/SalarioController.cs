@@ -34,7 +34,8 @@ namespace GerenciamentoDeDespesas.Controllers
 
         public IActionResult Novo()
         {
-            ViewBag.Mes = database.Meses.ToList();
+            //lista os meses que não foram utilizados
+            ViewBag.Mes = database.Meses.Where(x => x.MesId != x.Salario.MesId) .ToList();
             return View();
         }
 
@@ -50,7 +51,8 @@ namespace GerenciamentoDeDespesas.Controllers
 
                 Salario dados = new Salario();
                 dados.MesId = dadosTemporario.MesId;
-              //  dados.Valor = float.Parse(dadosTemporario.Valor, CultureInfo.InvariantCulture.NumberFormat);
+                dados.Valor = dadosTemporario.Valor;
+                //produto.PrecoDeCusto = float.Parse(dadosTemporario.PrecoDeCustoString, CultureInfo.InvariantCulture.NumberFormat);
                 database.Salarios.Add(dados);
                 database.SaveChanges();
                 return RedirectToAction(nameof(Index));
@@ -77,7 +79,7 @@ namespace GerenciamentoDeDespesas.Controllers
                 return NotFound();
             }
 
-            ViewBag.Mes = database.Meses.ToList();
+            ViewBag.Mes = database.Meses.Where(x => x.MesId == dados.MesId).ToList();
 
             SalarioDto dadosView = new SalarioDto();
             dadosView.SalarioId = dados.SalarioId;
@@ -93,11 +95,13 @@ namespace GerenciamentoDeDespesas.Controllers
         {
             if (ModelState.IsValid)
             {
-                TempData["confirmacao"] = dadosTemporario.Mes.Nome + " foi atualizado com sucesso.";
+                var mes = database.Meses.First(d => d.MesId == dadosTemporario.MesId);
+                TempData["confirmacao"] = mes.Nome + " foi atualizado com sucesso.";
+
                 var dados = await database.Salarios.FindAsync(dadosTemporario.SalarioId);
-                dados.SalarioId = dados.SalarioId;
-                dados.MesId = dados.MesId;
-                dados.Valor = dados.Valor;
+                dados.SalarioId = dadosTemporario.SalarioId;
+                dados.MesId = dadosTemporario.MesId;
+                dados.Valor = dadosTemporario.Valor;
                 database.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
@@ -122,6 +126,8 @@ namespace GerenciamentoDeDespesas.Controllers
                 return NotFound();
             }
 
+            ViewBag.Mes = database.Meses.Where(x => x.MesId == x.Salario.MesId).ToList();
+
             SalarioDto dadosView = new SalarioDto();
             dadosView.SalarioId = dados.SalarioId;
             dadosView.MesId = dados.MesId;
@@ -136,7 +142,10 @@ namespace GerenciamentoDeDespesas.Controllers
         public async Task<IActionResult> Deletar(int id)
         {
             var dados = await database.Salarios.FindAsync(id);
-            TempData["confirmacao"] = dados.Mes.Nome + " foi excluido com sucesso.";
+
+            var mes = database.Meses.First(d => d.MesId == dados.MesId);
+            TempData["confirmacao"] = mes.Nome + " foi excluido com sucesso.";
+
             database.Salarios.Remove(dados);
             await database.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

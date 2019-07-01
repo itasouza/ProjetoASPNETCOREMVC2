@@ -14,7 +14,7 @@
             <div class="form-group">
                 <label>Tipo de Despesa</label>
                 <div class="input-group">
-                    <input type="text" asp-for="Nome" class="form-control" id="nome" disabled  placeholder="Nome do Tipo Despesa" />
+                    <input type="text" asp-for="Nome" disabled class="form-control" id="nome" placeholder="Nome do Tipo Despesa" />
 
                 </div>
                 <small class="form-text text-muted"> <span class="text-danger" asp-validation-for="Nome"></span> </small>
@@ -23,7 +23,7 @@
         </div>
         <div class="form-actions">
             <p>
-                <button type="submit" class="btn btn-outline-info">Excluir</button>
+                <button type="submit" class="btn btn-outline-info">Deletar</button>
                 <a asp-action="Index" asp-controller="TipoDeDespesa" class="btn btn-outline-warning">Retornar</a>
             </p>
         </div>
@@ -32,4 +32,3 @@
 
 
 </div>
-

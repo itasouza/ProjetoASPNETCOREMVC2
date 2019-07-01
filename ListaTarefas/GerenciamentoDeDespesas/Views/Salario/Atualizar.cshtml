@@ -1,4 +1,4 @@
-﻿@model GerenciamentoDeDespesas.Dto.TipoDeDespesaDto
+﻿@model GerenciamentoDeDespesas.Dto.SalarioDto
 
 
 @{
@@ -7,28 +7,38 @@
 
 <div class="container">
 
-    <form role="form" asp-controller="TipoDeDespesa" asp-action="Atualizar" method="post">
+    <form role="form" asp-controller="Salario" asp-action="Atualizar" method="post">
         <div class="form-body">
-            <input type="hidden" asp-for="TipoDeDespesaId" />
+            <input type="hidden" asp-for="SalarioId" />
+
 
             <div class="form-group">
-                <label>Tipo de Despesa</label>
+                <label>Selecione o Mês</label>
                 <div class="input-group">
-                    <input type="text" asp-for="Nome" class="form-control" id="nome" placeholder="Nome do Tipo Despesa" />
-
+                    <select class="selectpicker form-control" data-show-subtext="true" id="mes" asp-for="MesId" asp-items="@(new SelectList(@ViewBag.Mes,"MesId", "Nome"))" data-live-search="true"></select>
                 </div>
-                <small class="form-text text-muted"> <span class="text-danger" asp-validation-for="Nome"></span> </small>
+                <small class="form-text text-muted"> <span class="text-danger" asp-validation-for="MesId"></span> </small>
+            </div>
+
+
+            <div class="form-group">
+                <label>Valor do Salário</label>
+                <div class="input-group">
+                    <input type="number" asp-for="Valor" class="form-control" id="nome" step="any" placeholder="10.50" />
+                </div>
+                <small class="form-text text-muted"> <span class="text-danger" asp-validation-for="Valor"></span> </small>
             </div>
 
         </div>
         <div class="form-actions">
             <p>
                 <button type="submit" class="btn btn-outline-info">Atualizar</button>
-                <a asp-action="Index" asp-controller="TipoDeDespesa" class="btn btn-outline-warning">Retornar</a>
+                <a asp-action="Index" asp-controller="Salario" class="btn btn-outline-warning">Retornar</a>
             </p>
         </div>
     </form>
     <br />
+
 
 
 </div>
