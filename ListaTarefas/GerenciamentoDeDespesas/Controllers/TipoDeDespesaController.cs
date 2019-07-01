@@ -23,16 +23,6 @@ namespace GerenciamentoDeDespesas.Controllers
 
 
 
-        //[HttpGet]
-        //public IActionResult Index(string busca = "", int pagina = 1, int tamanhoPagina = 5)
-        //{
-        //    var dados = database.TipoDeDespesas.OrderBy(pro => pro.TipoDeDespesaId).ToPagedList(pagina, tamanhoPagina);
-        //    ViewBag.Busca = busca;
-        //    ViewBag.TamanhoPagina = tamanhoPagina;
-
-        //    return View(dados);
-        //}
-
 
         [HttpGet]
         public async Task<IActionResult> Index()

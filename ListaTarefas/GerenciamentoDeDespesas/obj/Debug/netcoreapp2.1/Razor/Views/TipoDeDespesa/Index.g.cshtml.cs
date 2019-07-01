@@ -114,7 +114,7 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral("\r\n    <p id=\"btnControle\">\r\n        ");
             EndContext();
             BeginContext(714, 97, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ea30be1dc594ceeb07f23b5fef1a4e0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb7bb0b1fc464a1896ed71cac2c2b774", async() => {
                 BeginContext(798, 9, true);
                 WriteLiteral("Adicionar");
                 EndContext();
@@ -139,7 +139,7 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral("\r\n    </p>\r\n\r\n    ");
             EndContext();
             BeginContext(829, 464, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "deaeb6ba00984795be4190c060c70adf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c02bbad710ad47c188eec45a65b07fd5", async() => {
                 BeginContext(899, 387, true);
                 WriteLiteral(@"
 
@@ -218,7 +218,7 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral("</td>\r\n                    <td class=\"text-right\">\r\n                        ");
             EndContext();
             BeginContext(1844, 145, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fd7310792c3490fadbfeace7338c23b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "71af414e8d3040e3a4d5a0f2afc1f4ac", async() => {
                 BeginContext(1946, 39, true);
                 WriteLiteral("<i class=\"material-icons\">Atualizar</i>");
                 EndContext();
@@ -254,7 +254,7 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral(" |\r\n                        ");
             EndContext();
             BeginContext(2017, 140, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4fc3b1a2f65541889a6f55d02183b27d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99e6694e1bef48808f7a12bfe3b8806e", async() => {
                 BeginContext(2116, 37, true);
                 WriteLiteral("<i class=\"material-icons\">Deletar</i>");
                 EndContext();

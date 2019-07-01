@@ -30,6 +30,19 @@ namespace GerenciamentoDeDespesas.Controllers
         }
 
 
+        [HttpPost]
+        public async Task<IActionResult> Index(string txtProcurar)
+        {
+            if (!String.IsNullOrEmpty(txtProcurar))
+            {
+                var dadosPesquisa = await database.Salarios.Include(x => x.Mes).Where(td => td.Mes.Nome.ToUpper().Contains(txtProcurar.ToUpper())).ToListAsync();
+                txtProcurar = "";
+                return View(dadosPesquisa);
+            }
+
+            var dados = database.Salarios.Include(s => s.Mes); 
+            return View(await dados.ToListAsync());
+        }
 
 
         public IActionResult Novo()

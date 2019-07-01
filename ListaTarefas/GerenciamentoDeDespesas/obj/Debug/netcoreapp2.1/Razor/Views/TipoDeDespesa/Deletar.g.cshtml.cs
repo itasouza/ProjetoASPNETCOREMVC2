@@ -78,12 +78,12 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral("\r\n<div class=\"container\">\r\n\r\n    ");
             EndContext();
             BeginContext(130, 931, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "97fd6cfcc8824198bd62a7fce4ef0246", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "076bca6c39724e0fbd47cdf01c400ac4", async() => {
                 BeginContext(214, 47, true);
                 WriteLiteral("\r\n        <div class=\"form-body\">\r\n            ");
                 EndContext();
                 BeginContext(261, 49, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2ad2fe0111934f3db185baf18485168c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "38e69eeed0f24dd38a700a9289f16cff", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -108,7 +108,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n\r\n            <div class=\"form-group\">\r\n                <label>Tipo de Despesa</label>\r\n                <div class=\"input-group\">\r\n                    ");
                 EndContext();
                 BeginContext(463, 111, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1c8aadd019b9474ab05dc187a8f5500d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8be4f5934b114c4eba039269d9e1ffb4", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -139,7 +139,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n\r\n                </div>\r\n                <small class=\"form-text text-muted\"> ");
                 EndContext();
                 BeginContext(655, 59, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49b5d1effbe04cb0a4bae54e4afb2f72", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff591cc2ddcf44b196feab12ad6880d4", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
@@ -163,7 +163,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 WriteLiteral(" </small>\r\n            </div>\r\n\r\n        </div>\r\n        <div class=\"form-actions\">\r\n            <p>\r\n                <button type=\"submit\" class=\"btn btn-outline-info\">Deletar</button>\r\n                ");
                 EndContext();
                 BeginContext(917, 97, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5c63ea9001e4c87bf71460bc7d87281", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "338e10a9943f4e20b6ee8d5fc067cc32", async() => {
                     BeginContext(1002, 8, true);
                     WriteLiteral("Retornar");
                     EndContext();
