@@ -5,40 +5,56 @@
     ViewData["Title"] = "Novo";
 }
 
+
+<br />
 <div class="container">
-
+    <!--início do formulário-->
     <form role="form" asp-controller="Salario" asp-action="Atualizar" method="post">
-        <div class="form-body">
-            <input type="hidden" asp-for="SalarioId" />
+        <input type="hidden" asp-for="SalarioId" />
 
+        <!--informação básica-->
+        <fieldset>
 
-            <div class="form-group">
-                <label>Selecione o Mês</label>
-                <div class="input-group">
-                    <select class="selectpicker form-control" data-show-subtext="true" id="mes" asp-for="MesId" asp-items="@(new SelectList(@ViewBag.Mes,"MesId", "Nome"))" data-live-search="true"></select>
+            <legend class="text-center">Atualizar Salário</legend>
+
+            <div class="row col-sm-4">
+
+                <div class="form-group col-sm-12">
+                    <label for="genero">Selecione o mês*</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-filter"></span>
+                        </div>
+                        <select class="form-control selectpicker" data-show-subtext="true" tabindex="1" id="mes" asp-for="MesId"
+                                asp-items="@(new SelectList(@ViewBag.Mes,"MesId", "Nome"))" data-live-search="true"></select>
+                    </div>
+                    <small class="form-text text-muted"> <span class="text-danger" asp-validation-for="MesId"></span> </small>
                 </div>
-                <small class="form-text text-muted"> <span class="text-danger" asp-validation-for="MesId"></span> </small>
-            </div>
 
-
-            <div class="form-group">
-                <label>Valor do Salário</label>
-                <div class="input-group">
-                    <input type="number" asp-for="Valor" class="form-control" id="nome" step="any" placeholder="10.50" />
+                <div class="form-group col-sm-12">
+                    <label id="" for="nome">Valor do Salário*</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </div>
+                        <input type="text" name="nome" asp-for="Valor" class="form-control" tabindex="2" id="nome" placeholder="Adicionar valor" autocomplete="off">
+                    </div>
+                    <small class="form-text text-muted"> <span class="text-danger" asp-validation-for="Valor"></span> </small>
                 </div>
-                <small class="form-text text-muted"> <span class="text-danger" asp-validation-for="Valor"></span> </small>
-            </div>
 
-        </div>
-        <div class="form-actions">
-            <p>
-                <button type="submit" class="btn btn-outline-info">Atualizar</button>
-                <a asp-action="Index" asp-controller="Salario" class="btn btn-outline-warning">Retornar</a>
-            </p>
-        </div>
+                <div class="form-group col-sm-12">
+                    <input type="submit" class="btn btn-primary" name="enviar" id="enviar" value="Enviar">
+                    <a asp-action="Index" asp-controller="Salario" class="btn btn-warning">Retornar</a>
+                </div>
+
+            </div>
+            <!--row nome e apelido-->
+
+        </fieldset>
+
+
     </form>
-    <br />
-
-
+    <!--fim do formulário-->
 
 </div>
+

@@ -31,9 +31,7 @@ namespace GerenciamentoDeDespesas.Data
             modelBuilder.ApplyConfiguration(new TipoDespesaMap());
         }
 
-        public DbSet<GerenciamentoDeDespesas.Dto.TipoDeDespesaDto> TipoDeDespesaDto { get; set; }
 
-        public DbSet<GerenciamentoDeDespesas.Dto.SalarioDto> SalarioDto { get; set; }
 
     }
 }

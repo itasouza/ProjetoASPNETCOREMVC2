@@ -5,31 +5,47 @@
     ViewData["Title"] = "Novo";
 }
 
+
+
+<br />
 <div class="container">
-
+    <!--início do formulário-->
     <form role="form" asp-controller="TipoDeDespesa" asp-action="Salvar" method="post">
-        <div class="form-body">
-            <input type="hidden" asp-for="TipoDeDespesaId" value="0" />
+        <input type="hidden" asp-for="TipoDeDespesaId" value="0" />
 
-            <div class="form-group">
-                <label>Tipo de Despesa</label>
-                <div class="input-group">
-                    <input type="text" asp-for="Nome" class="form-control" id="nome" placeholder="Nome do Tipo Despesa" />
+        <!--informação básica-->
+        <fieldset>
 
+            <legend class="text-center">Cadastro Tipo de Despesa</legend>
+
+            <div class="row col-sm-6">
+                <div class="form-group col-sm-12">
+                    <label id="" for="nome">Tipo de Despesa*</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </div>
+                        <input type="text" name="nome" asp-for="Nome" class="form-control" tabindex="1" id="nome" placeholder="Adicionar nome" autocomplete="off">
+                    </div>
+                    <small class="form-text text-muted"> <span class="text-danger" asp-validation-for="Nome"></span> </small>
                 </div>
-                <small class="form-text text-muted"> <span class="text-danger" asp-validation-for="Nome"></span> </small>
+
+                <div class="form-group col-sm-12">
+                    <input type="submit" class="btn btn-primary" name="enviar" id="enviar" value="Enviar">
+                    <a asp-action="Index" asp-controller="TipoDeDespesa" class="btn btn-warning">Retornar</a>
+                </div>
+
             </div>
+            <!--row nome e apelido-->
 
-        </div>
-        <div class="form-actions">
-            <p>
-                <button type="submit" class="btn btn-outline-info">Cadastrar</button>
-                <a asp-action="Index" asp-controller="TipoDeDespesa" class="btn btn-outline-warning">Retornar</a>
-            </p>
-        </div>
+        </fieldset>
+
+
     </form>
-    <br />
-
-
+    <!--fim do formulário-->
 
 </div>
+
+
+
+
