@@ -12,8 +12,13 @@ namespace GerenciamentoDeDespesas.Dto
         [Key]
         [Required]
         public int DespesaId { get; set; }
+
+        [Required(ErrorMessage = "Mês e obrigatório")]
         public int MesId { get; set; }
+
         public Mes Mes { get; set; }
+
+        [Required(ErrorMessage = "Tipo de despesa é obrigatório")]
         public int TipoDeDespesaId { get; set; }
         public TipoDeDespesa TipoDeDespesa { get; set; }
 

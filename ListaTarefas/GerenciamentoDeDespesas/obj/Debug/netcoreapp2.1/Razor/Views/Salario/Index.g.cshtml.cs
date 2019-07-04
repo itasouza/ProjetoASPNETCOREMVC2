@@ -98,7 +98,7 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral("\r\n        <p id=\"btnControle\">\r\n            ");
             EndContext();
             BeginContext(532, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7652c36a0bb44d2d9c2bd5a6cbebe289", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee1bd901d63f4e379a3c99500451edae", async() => {
                 BeginContext(602, 9, true);
                 WriteLiteral("Adicionar");
                 EndContext();
@@ -177,7 +177,7 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral("</td>\r\n                        <td class=\"text-right\">\r\n                            ");
             EndContext();
             BeginContext(1330, 124, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de06d07ecb164541ad9549287f891ba5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "994309f3bc4347cab51d5286dad6c301", async() => {
                 BeginContext(1411, 39, true);
                 WriteLiteral("<i class=\"material-icons\">Atualizar</i>");
                 EndContext();
@@ -213,7 +213,7 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral(" |\r\n                            ");
             EndContext();
             BeginContext(1486, 119, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22846e777b1f4b14baec1642caa080e7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3522bed006194f7aaa309830ebe5da0c", async() => {
                 BeginContext(1564, 37, true);
                 WriteLiteral("<i class=\"material-icons\">Deletar</i>");
                 EndContext();
