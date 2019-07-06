@@ -15,8 +15,9 @@ namespace GerenciamentoDeDespesas.Dto
         public int MesId { get; set; }
         public Mes Mes { get; set; }
 
-        [Range(0, double.MaxValue, ErrorMessage = "O valor inválido")]
-        [Required(ErrorMessage = "Valor é obrigatório")]
         public double Valor { get; set; }
+
+        [Required(ErrorMessage = "Valor é obrigatório")]
+        public string ValorString { get; set; }
     }
 }

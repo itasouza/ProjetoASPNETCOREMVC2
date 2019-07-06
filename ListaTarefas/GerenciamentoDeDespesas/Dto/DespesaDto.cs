@@ -22,8 +22,9 @@ namespace GerenciamentoDeDespesas.Dto
         public int TipoDeDespesaId { get; set; }
         public TipoDeDespesa TipoDeDespesa { get; set; }
 
-        [Required(ErrorMessage = "Valor é obrigatório")]
-        [Range(0, double.MaxValue, ErrorMessage = "O valor inválido")]
         public double Valor { get; set; }
+
+        [Required(ErrorMessage = "Valor é obrigatório")]
+        public string ValorString { get; set; }
     }
 }

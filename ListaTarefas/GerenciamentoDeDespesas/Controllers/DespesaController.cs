@@ -56,8 +56,7 @@ namespace GerenciamentoDeDespesas.Controllers
                 Despesa dados = new Despesa();
                 dados.TipoDeDespesaId = dadosTemporario.TipoDeDespesaId;
                 dados.MesId = dadosTemporario.MesId;
-                dados.Valor = dadosTemporario.Valor;
-                //produto.PrecoDeCusto = float.Parse(dadosTemporario.PrecoDeCustoString, CultureInfo.InvariantCulture.NumberFormat);
+                dados.Valor = float.Parse(dadosTemporario.ValorString, CultureInfo.InvariantCulture.NumberFormat);
                 database.Despesas.Add(dados);
                 database.SaveChanges();
                 return RedirectToAction(nameof(Index));
@@ -91,7 +90,7 @@ namespace GerenciamentoDeDespesas.Controllers
             dadosView.DespesaId = dados.DespesaId;
             dadosView.MesId = dados.MesId;
             dadosView.TipoDeDespesaId = dados.TipoDeDespesaId;
-            dadosView.Valor = dados.Valor;
+            dadosView.ValorString = dados.Valor.ToString();
             return View(dadosView);
         }
 
@@ -107,7 +106,7 @@ namespace GerenciamentoDeDespesas.Controllers
                 var dados = await database.Despesas.FindAsync(dadosTemporario.DespesaId);
                 dados.TipoDeDespesaId = dadosTemporario.TipoDeDespesaId;
                 dados.MesId = dadosTemporario.MesId;
-                dados.Valor = dadosTemporario.Valor;
+                dados.Valor = float.Parse(dadosTemporario.ValorString, CultureInfo.InvariantCulture.NumberFormat);
                 database.SaveChanges();
                 return RedirectToAction(nameof(Index));
 
@@ -120,6 +119,48 @@ namespace GerenciamentoDeDespesas.Controllers
             }
         }
 
+
+
+        public async Task<IActionResult> Deletar(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var dados = await database.Despesas.FindAsync(id);
+            if (dados == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Mes = database.Meses.ToList();
+            ViewBag.TipoDespesa = database.TipoDeDespesas.ToList();
+
+
+
+            DespesaDto dadosView = new DespesaDto();
+            dadosView.DespesaId = dados.DespesaId;
+            dadosView.MesId = dados.MesId;
+            dadosView.TipoDeDespesaId = dados.TipoDeDespesaId;
+            dadosView.ValorString = dados.Valor.ToString();
+            return View(dadosView);
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Deletar(int id)
+        {
+            var dados = await database.Despesas.FindAsync(id);
+
+            TempData["confirmacao"] = "Despesa foi excluido com sucesso.";
+
+            database.Despesas.Remove(dados);
+            await database.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
 
 
     }

@@ -11,6 +11,7 @@ namespace GerenciamentoDeDespesas.Models
         public int MesId { get; set; }
         public Mes Mes { get; set; }
         public double Valor { get; set; }
+
     }
 
 }

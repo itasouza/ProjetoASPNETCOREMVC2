@@ -64,8 +64,7 @@ namespace GerenciamentoDeDespesas.Controllers
 
                 Salario dados = new Salario();
                 dados.MesId = dadosTemporario.MesId;
-                dados.Valor = dadosTemporario.Valor;
-                //produto.PrecoDeCusto = float.Parse(dadosTemporario.PrecoDeCustoString, CultureInfo.InvariantCulture.NumberFormat);
+                dados.Valor = float.Parse(dadosTemporario.ValorString, CultureInfo.InvariantCulture.NumberFormat);
                 database.Salarios.Add(dados);
                 database.SaveChanges();
                 return RedirectToAction(nameof(Index));
@@ -97,7 +96,7 @@ namespace GerenciamentoDeDespesas.Controllers
             SalarioDto dadosView = new SalarioDto();
             dadosView.SalarioId = dados.SalarioId;
             dadosView.MesId = dados.MesId;
-            dadosView.Valor = dados.Valor;
+            dadosView.ValorString = dados.Valor.ToString();
             return View(dadosView);
         }
 
@@ -114,7 +113,7 @@ namespace GerenciamentoDeDespesas.Controllers
                 var dados = await database.Salarios.FindAsync(dadosTemporario.SalarioId);
                 dados.SalarioId = dadosTemporario.SalarioId;
                 dados.MesId = dadosTemporario.MesId;
-                dados.Valor = dadosTemporario.Valor;
+                dados.Valor = float.Parse(dadosTemporario.ValorString, CultureInfo.InvariantCulture.NumberFormat);
                 database.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
@@ -140,11 +139,12 @@ namespace GerenciamentoDeDespesas.Controllers
             }
 
             ViewBag.Mes = database.Meses.Where(x => x.MesId == x.Salario.MesId).ToList();
+        
 
             SalarioDto dadosView = new SalarioDto();
             dadosView.SalarioId = dados.SalarioId;
             dadosView.MesId = dados.MesId;
-            dadosView.Valor = dados.Valor;
+            dadosView.ValorString = dados.Valor.ToString();
             return View(dadosView);
         }
 
