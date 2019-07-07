@@ -162,5 +162,25 @@ namespace GerenciamentoDeDespesas.Controllers
         }
 
 
+        public JsonResult AdicionarTipoDespesa(string txtDespesa)
+        {
+            if (!String.IsNullOrEmpty(txtDespesa))
+            {
+                if (!database.TipoDeDespesas.Any( td => td.Nome.ToUpper() == txtDespesa.ToUpper()))
+                {
+                    TipoDeDespesa dados = new TipoDeDespesa();
+                    dados.Nome = txtDespesa;
+                    database.TipoDeDespesas.Add(dados);
+                    database.SaveChanges();
+
+                    return Json(true);
+                }
+
+            }
+
+            return Json(false);
+        }
+
+
     }
 }
