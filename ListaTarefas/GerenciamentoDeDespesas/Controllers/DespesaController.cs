@@ -29,6 +29,8 @@ namespace GerenciamentoDeDespesas.Controllers
             const int itensPagina = 10;
             int numeroPagina = (pagina ?? 1);
 
+            ViewBag.Mes = new SelectList(database.Meses.Where(x => x.MesId == x.Salario.MesId), "MesId", "Nome");
+
             var dados = database.Despesas.Include(s => s.Mes).Include(d => d.TipoDeDespesa).OrderBy(d => d.MesId);
            // return View(await dados.ToPagedListAsync(numeroPagina,itensPagina));
             return View(await dados.ToListAsync());

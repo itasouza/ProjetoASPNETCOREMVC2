@@ -39,3 +39,4 @@ C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\GerenciamentoDeDespesas\obj\Debug\n
 C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\GerenciamentoDeDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Despesa\Novo.g.cshtml.cs
 C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\GerenciamentoDeDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Despesa\Atualizar.g.cshtml.cs
 C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\GerenciamentoDeDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Despesa\Deletar.g.cshtml.cs
+C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\GerenciamentoDeDespesas\obj\Debug\netcoreapp2.1\Razor\Views\Despesa\_GastoTotalMes.g.cshtml.cs

@@ -81,12 +81,12 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral("\r\n\r\n\r\n<br />\r\n<div class=\"container\">\r\n    <!--início do formulário-->\r\n    ");
             EndContext();
             BeginContext(173, 1402, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d1b2bcd8d5940d6ac8113a969c888f3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9aa21c011ab4cd9aacc2624279fd584", async() => {
                 BeginContext(257, 10, true);
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(267, 50, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5cf3dcdbcc534b989573220272598240", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d9deaa017f9e48d18c23ac5ecdf8faba", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -125,7 +125,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                         ");
                 EndContext();
                 BeginContext(851, 147, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "4a8b4afe8a734fb5b8cb129b6c101213", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ce766266c57e489faa6d385b72684372", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -160,7 +160,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n                    </div>\r\n                    <small class=\"form-text text-muted\"> ");
                 EndContext();
                 BeginContext(1085, 59, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1377ce42cca4469ca6a37b4920fb21eb", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da6dc2336ad045c7bd17645cb181525d", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
@@ -184,7 +184,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                 WriteLiteral(" </small>\r\n                </div>\r\n\r\n                <div class=\"form-group col-sm-12\">\r\n                    <input type=\"submit\" class=\"btn btn-primary\" name=\"enviar\" id=\"enviar\" value=\"Enviar\">\r\n                    ");
                 EndContext();
                 BeginContext(1361, 89, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc77f44342cb42b5b997d4141f72a443", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dfbe6ea0e8cd48469607c998cdfb0475", async() => {
                     BeginContext(1438, 8, true);
                     WriteLiteral("Retornar");
                     EndContext();

@@ -98,7 +98,7 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral("\r\n    <p id=\"btnControle\">\r\n        ");
             EndContext();
             BeginContext(490, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7665071521324db98d6f036769e206f2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "847bda8f595c4beab457fb44052571fa", async() => {
                 BeginContext(566, 9, true);
                 WriteLiteral("Adicionar");
                 EndContext();
@@ -166,7 +166,7 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral("</td>\r\n                    <td class=\"text-right\">\r\n                        ");
             EndContext();
             BeginContext(1143, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e68d3ece67c14bfcbd4cbb3764d76e5e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eae9b3204ce34aa0b723eab7a71a2322", async() => {
                 BeginContext(1230, 9, true);
                 WriteLiteral("Atualizar");
                 EndContext();
@@ -202,7 +202,7 @@ using GerenciamentoDeDespesas.Models;
             WriteLiteral(" |\r\n                        ");
             EndContext();
             BeginContext(1271, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b8bdeb37044a4a1d876c15ae2265e262", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8770970ac6148c3abae3e250464c266", async() => {
                 BeginContext(1355, 7, true);
                 WriteLiteral("Deletar");
                 EndContext();
