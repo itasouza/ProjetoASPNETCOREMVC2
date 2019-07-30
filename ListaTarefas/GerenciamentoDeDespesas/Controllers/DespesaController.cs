@@ -10,6 +10,7 @@ using GerenciamentoDeDespesas.Dto;
 using GerenciamentoDeDespesas.Models;
 using System.Globalization;
 using X.PagedList;
+using GerenciamentoDeDespesas.ViewsModels;
 
 namespace GerenciamentoDeDespesas.Controllers
 {
@@ -164,6 +165,15 @@ namespace GerenciamentoDeDespesas.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        public JsonResult GestaoTotalMes(int mesId)
+        {
+            GastosTotaisMesViewsModel gastos = new GastosTotaisMesViewsModel();
+            gastos.ValorTotalGasto = database.Despesas.Where(d => d.Mes.MesId == mesId).Sum(d => d.Valor);
+            gastos.Salario = database.Salarios.Where(s => s.Mes.MesId == mesId).Select(s => s.Valor).FirstOrDefault();
+            return Json(gastos);
+
+        }
 
     }
 }
