@@ -12,7 +12,10 @@
 
 <!--partial -->
 @await Html.PartialAsync("_Adolescentes", Model)
-@await Html.PartialAsync("_Adultos", Model)
+
+@{
+    await Html.RenderPartialAsync("_Adultos", Model);
+}
 
 @*@await Html.PartialAsync("_Idosos", Model)*@
 
