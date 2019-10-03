@@ -66,7 +66,7 @@ using PesquisaCrypto.Models;
             WriteLiteral("\r\n<br />\r\n<p>\r\n    ");
             EndContext();
             BeginContext(111, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8924fbe765a043a88082027a6b0f36ae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "871e72acde4c4870ab8b2fc7bdcf1226", async() => {
                 BeginContext(158, 10, true);
                 WriteLiteral("Nova Moeda");
                 EndContext();
@@ -99,7 +99,7 @@ using PesquisaCrypto.Models;
             WriteLiteral("\r\n    </div>\r\n\r\n \r\n        ");
             EndContext();
             BeginContext(298, 27, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "073e6dcbc6354c2c90982ab34a6f9630", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5ba92950a2ff46febd1f99d3125101c5", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

@@ -66,7 +66,7 @@ using ListaTarefas.Models;
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(121, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b2888698e15842cdb2eccc0b42a2db6f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00e27bd5c0864528abe0e32d9d26c75b", async() => {
                 BeginContext(144, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -267,7 +267,7 @@ using ListaTarefas.Models;
             WriteLiteral("\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(1882, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6b743674fe7a4be9a2a75ff3cb61c51f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "245976338d964f2e994f69cff715051c", async() => {
                 BeginContext(1934, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -302,7 +302,7 @@ using ListaTarefas.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1962, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db9b8b7138f74a0b834b442157d0bc56", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "64b79b4d402645898a9c126c17f38f5c", async() => {
                 BeginContext(2017, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -337,7 +337,7 @@ using ListaTarefas.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(2048, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae3a1d4184594a659fb76364823cff9e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9cfd0185d2844e2cb10be91f6e79ade5", async() => {
                 BeginContext(2102, 6, true);
                 WriteLiteral("Delete");
                 EndContext();
