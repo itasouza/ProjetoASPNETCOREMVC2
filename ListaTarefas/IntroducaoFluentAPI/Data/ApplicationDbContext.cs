@@ -18,6 +18,13 @@ namespace IntroducaoFluentAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //HasKey indica a chave da tabela
+            //HasColumnName nome da coluna
+            //HasColumnType tipo da coluna
+            //HasMaxLength tamanho máximo da coluna
+            //IsRequired o campo e requerido ou não
+            //ToTable indica o nome da tabela
+
             modelBuilder.Entity<Pessoa>().HasKey(x => x.PessoaID);
             modelBuilder.Entity<Pessoa>().Property(x => x.Nome).HasColumnName("Nome").HasColumnType("nText").HasMaxLength(50).IsRequired();
             modelBuilder.Entity<Pessoa>().Property(x => x.Idade).HasColumnName("Idade").HasColumnType("int").IsRequired(false);
