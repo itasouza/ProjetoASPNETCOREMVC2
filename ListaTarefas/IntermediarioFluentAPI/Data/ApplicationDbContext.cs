@@ -31,7 +31,7 @@ namespace IntermediarioFluentAPI.Data
             modelBuilder.Entity<Pessoa>().Property(x => x.Idade).HasColumnName("Idade").HasColumnType("int").IsRequired(false);
             modelBuilder.Entity<Pessoa>().Property(x => x.Peso).HasColumnName("Peso").HasColumnType("float").IsRequired(false);
 
-            //relacionameno
+            //relacionameno não obrigatório 
             //HasOne = tem um 
             //WithOne = com um
             //HasForeignKey = Possui chave estrangeira
