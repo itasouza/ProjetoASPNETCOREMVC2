@@ -1,6 +1,0 @@
-C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\FaixaEtariaViewComponents\obj\Debug\netcoreapp2.1\FaixaEtariaViewComponents.csproj.CoreCompileInputs.cache
-C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\FaixaEtariaViewComponents\obj\Debug\netcoreapp2.1\FaixaEtariaViewComponents.RazorAssemblyInfo.cache
-C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\FaixaEtariaViewComponents\obj\Debug\netcoreapp2.1\FaixaEtariaViewComponents.RazorAssemblyInfo.cs
-C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\FaixaEtariaViewComponents\obj\Debug\netcoreapp2.1\FaixaEtariaViewComponents.AssemblyInfoInputs.cache
-C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\FaixaEtariaViewComponents\obj\Debug\netcoreapp2.1\FaixaEtariaViewComponents.AssemblyInfo.cs
-C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\FaixaEtariaViewComponents\obj\Debug\netcoreapp2.1\FaixaEtariaViewComponents.csprojAssemblyReference.cache
