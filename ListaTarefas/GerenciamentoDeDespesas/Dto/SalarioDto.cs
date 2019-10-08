@@ -18,6 +18,7 @@ namespace GerenciamentoDeDespesas.Dto
         public double Valor { get; set; }
 
         [Required(ErrorMessage = "Valor é obrigatório")]
+        [Range(0,double.MaxValue,ErrorMessage ="Valor Inválido")]
         public string ValorString { get; set; }
     }
 }

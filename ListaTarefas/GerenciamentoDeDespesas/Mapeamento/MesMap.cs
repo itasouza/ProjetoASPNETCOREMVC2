@@ -12,9 +12,12 @@ namespace GerenciamentoDeDespesas.Mapeamento
     {
         public void Configure(EntityTypeBuilder<Mes> builder)
         {
+            //HasKey = chave primária
             builder.HasKey(m => m.MesId);
-            //banco não vai gerar o id do mês
+            //ValueGeneratedNever = banco não vai gerar o id do mês
             builder.Property(m => m.MesId).ValueGeneratedNever();
+            //HasMaxLength = tamanho do campo
+            //IsRequired = requerido
             builder.Property(m => m.Nome).HasMaxLength(50).IsRequired();
 
             //1 mês tem várias despesa, se excluir 1 mês, vai escluir todas as desapesas do Mês excluido

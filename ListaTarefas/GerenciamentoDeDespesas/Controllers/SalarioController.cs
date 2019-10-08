@@ -1,170 +1,145 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using GerenciamentoDeDespesas.Data;
 using GerenciamentoDeDespesas.Dto;
 using GerenciamentoDeDespesas.Models;
-using System.Globalization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace GerenciamentoDeDespesas.Controllers
 {
     public class SalarioController : Controller
     {
-        private readonly ApplicationDbContext database;
+        private readonly ApplicationDbContext _context;
 
-        public SalarioController(ApplicationDbContext database)
+        public SalarioController(ApplicationDbContext context)
         {
-            this.database = database;
+            _context = context;
         }
 
-
-        [HttpGet]
+        // GET: Salario
         public async Task<IActionResult> Index()
         {
-            var dados = database.Salarios.Include(s => s.Mes); 
-            return View(await dados.ToListAsync());
+            var applicationDbContext = _context.Salarios.Include(s => s.Mes);
+            return View(await applicationDbContext.ToListAsync());
         }
 
 
-        [HttpPost]
-        public async Task<IActionResult> Index(string txtProcurar)
+
+        // GET: Salario/Create
+        public IActionResult Create()
         {
-            if (!String.IsNullOrEmpty(txtProcurar))
-            {
-                var dadosPesquisa = await database.Salarios.Include(x => x.Mes).Where(td => td.Mes.Nome.ToUpper().Contains(txtProcurar.ToUpper())).ToListAsync();
-                txtProcurar = "";
-                return View(dadosPesquisa);
-            }
-
-            var dados = database.Salarios.Include(s => s.Mes); 
-            return View(await dados.ToListAsync());
-        }
-
-
-        public IActionResult Novo()
-        {
-            //lista os meses que não foram utilizados
-            ViewBag.Mes = database.Meses.Where(x => x.MesId != x.Salario.MesId) .ToList();
+            var dados = _context.Meses.Where(x => x.MesId != x.Salario.MesId).ToList();
+            ViewData["MesId"] = new SelectList(dados, "MesId", "Nome");
             return View();
         }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Salvar(SalarioDto dadosTemporario)
+        public async Task<IActionResult> Create(SalarioDto dadosTemporario)
         {
+
             if (ModelState.IsValid)
             {
-                var mes = database.Meses.First(d => d.MesId == dadosTemporario.MesId);
+                var mes = _context.Meses.First(d => d.MesId == dadosTemporario.MesId);
                 TempData["confirmacao"] = mes.Nome + " foi cadastrado com sucesso.";
 
                 Salario dados = new Salario();
                 dados.MesId = dadosTemporario.MesId;
                 dados.Valor = float.Parse(dadosTemporario.ValorString, CultureInfo.InvariantCulture.NumberFormat);
-                database.Salarios.Add(dados);
-                database.SaveChanges();
+                _context.Salarios.Add(dados);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             else
             {
-                ViewBag.Mes = database.Meses.ToList();
-                return View("../Salario/Novo");
+                var dados = _context.Meses.Where(x => x.MesId != x.Salario.MesId).ToList();
+                ViewData["MesId"] = new SelectList(dados, "MesId", "Nome");
+                return View("../Salario/Create");
             }
+
         }
 
-
-
-        public async Task<IActionResult> Atualizar(int? id)
+        // GET: Salario/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
             }
 
-            var dados = await database.Salarios.FindAsync(id);
+            var dados = await _context.Salarios.FindAsync(id);
             if (dados == null)
             {
                 return NotFound();
             }
-
-            ViewBag.Mes = database.Meses.Where(x => x.MesId == dados.MesId).ToList();
-
             SalarioDto dadosView = new SalarioDto();
             dadosView.SalarioId = dados.SalarioId;
             dadosView.MesId = dados.MesId;
             dadosView.ValorString = dados.Valor.ToString();
+
+            var registro = _context.Meses.Where(x => x.MesId == dados.MesId).ToList();
+            ViewData["MesId"] = new SelectList(registro, "MesId", "Nome");
+
             return View(dadosView);
         }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Atualizar(SalarioDto dadosTemporario)
+        public async Task<IActionResult> Edit(SalarioDto dadosTemporario)
         {
+
             if (ModelState.IsValid)
             {
-                var mes = database.Meses.First(d => d.MesId == dadosTemporario.MesId);
+                var mes = _context.Meses.First(d => d.MesId == dadosTemporario.MesId);
                 TempData["confirmacao"] = mes.Nome + " foi atualizado com sucesso.";
 
-                var dados = await database.Salarios.FindAsync(dadosTemporario.SalarioId);
+                var dados = await _context.Salarios.FindAsync(dadosTemporario.SalarioId);
                 dados.SalarioId = dadosTemporario.SalarioId;
                 dados.MesId = dadosTemporario.MesId;
                 dados.Valor = float.Parse(dadosTemporario.ValorString, CultureInfo.InvariantCulture.NumberFormat);
-                database.SaveChanges();
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             else
             {
-                ViewBag.Mes = database.Meses.ToList();
-                return View("../Salario/Atualizar");
+                ViewData["MesId"] = new SelectList(_context.Meses, "MesId", "Nome", dadosTemporario.MesId);
+                return View("../Salario/Edit");
             }
+
+
         }
 
 
-        public async Task<IActionResult> Deletar(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var dados = await database.Salarios.FindAsync(id);
-            if (dados == null)
-            {
-                return NotFound();
-            }
-
-            ViewBag.Mes = database.Meses.Where(x => x.MesId == x.Salario.MesId).ToList();
-        
-
-            SalarioDto dadosView = new SalarioDto();
-            dadosView.SalarioId = dados.SalarioId;
-            dadosView.MesId = dados.MesId;
-            dadosView.ValorString = dados.Valor.ToString();
-            return View(dadosView);
-        }
-
-
-
-        [HttpPost]
+        // POST: Salario/Delete/5
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Deletar(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var dados = await database.Salarios.FindAsync(id);
-
-            var mes = database.Meses.First(d => d.MesId == dados.MesId);
-            TempData["confirmacao"] = mes.Nome + " foi excluido com sucesso.";
-
-            database.Salarios.Remove(dados);
-            await database.SaveChangesAsync();
+            var salarioDto = await _context.Salarios.FindAsync(id);
+            _context.Salarios.Remove(salarioDto);
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
 
+        [HttpPost]
+        public async Task<JsonResult> Deletar(int id)
+        {
+            var dados = await _context.Salarios.FindAsync(id);
+            TempData["confirmacao"] = dados.Mes.Nome + " foi excluido com sucesso.";
+            _context.Salarios.Remove(dados);
+            await _context.SaveChangesAsync();
+            return Json(dados.Mes + "excluido com sucesso.");
+        }
 
+   
     }
 }

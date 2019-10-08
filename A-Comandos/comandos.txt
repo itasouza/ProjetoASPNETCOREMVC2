@@ -8,7 +8,7 @@ Pomelo.EntityFrameworkCore.Mysql -version 2.2.0
 
 --criar uma nova migração 
 Add-Migration CreateIdentitySchema
-Update-Database
+Update-Database CreateIdentitySchema
 
 --criar uma nova migração
 Add-Migration CreatesonMarketSchema

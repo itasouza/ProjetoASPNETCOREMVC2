@@ -67,5 +67,4 @@ C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\ViewModel\obj\Debug\netcoreapp2.2\V
 C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\ViewModel\obj\Debug\netcoreapp2.2\ViewModel.dll
 C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\ViewModel\obj\Debug\netcoreapp2.2\ViewModel.pdb
 C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\ViewModel\obj\Debug\netcoreapp2.2\ViewModel.csproj.CopyComplete
-C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\ViewModel\obj\Debug\netcoreapp2.2\ViewModel.csprojAssemblyReference.cache
 C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\ViewModel\obj\Debug\netcoreapp2.2\Razor\Views\Alunos\Todos.g.cshtml.cs

@@ -6,174 +6,143 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GerenciamentoDeDespesas.Data;
-using GerenciamentoDeDespesas.Dto;
 using GerenciamentoDeDespesas.Models;
+using GerenciamentoDeDespesas.Dto;
 using System.Globalization;
-using X.PagedList;
 using GerenciamentoDeDespesas.ViewsModels;
 
 namespace GerenciamentoDeDespesas.Controllers
 {
     public class DespesaController : Controller
     {
-        private readonly ApplicationDbContext database;
+        private readonly ApplicationDbContext _context;
 
-        public DespesaController(ApplicationDbContext database)
+        public DespesaController(ApplicationDbContext context)
         {
-            this.database = database;
+            _context = context;
+        }
+
+        // GET: Despesa
+        public async Task<IActionResult> Index()
+        {
+            ViewBag.Mes = new SelectList(_context.Meses.Where(x => x.MesId == x.Salario.MesId), "MesId", "Nome");
+
+            var applicationDbContext = _context.Despesas.Include(d => d.Mes).Include(d => d.TipoDeDespesa);
+            return View(await applicationDbContext.ToListAsync());
         }
 
 
-
-        public async Task<IActionResult> Index(int? pagina)
+        // GET: Despesa/Create
+        public IActionResult Create()
         {
-            const int itensPagina = 10;
-            int numeroPagina = (pagina ?? 1);
-
-            ViewBag.Mes = new SelectList(database.Meses.Where(x => x.MesId == x.Salario.MesId), "MesId", "Nome");
-
-            var dados = database.Despesas.Include(s => s.Mes).Include(d => d.TipoDeDespesa).OrderBy(d => d.MesId);
-           // return View(await dados.ToPagedListAsync(numeroPagina,itensPagina));
-            return View(await dados.ToListAsync());
-        }
-
-
-
-        public IActionResult Novo()
-        {
-            ViewBag.Mes = database.Meses.ToList();
-            ViewBag.TipoDespesa = database.TipoDeDespesas.ToList();
+            ViewData["MesId"] = new SelectList(_context.Meses, "MesId", "Nome");
+            ViewData["TipoDeDespesaId"] = new SelectList(_context.TipoDeDespesas, "TipoDeDespesaId", "Nome");
             return View();
         }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Salvar(DespesaDto dadosTemporario)
+        public async Task<IActionResult> Create(DespesaDto dadosTemporario)
         {
+
             if (ModelState.IsValid)
             {
-
                 TempData["confirmacao"] = " Despesa foi cadastrado com sucesso.";
 
                 Despesa dados = new Despesa();
                 dados.TipoDeDespesaId = dadosTemporario.TipoDeDespesaId;
                 dados.MesId = dadosTemporario.MesId;
                 dados.Valor = float.Parse(dadosTemporario.ValorString, CultureInfo.InvariantCulture.NumberFormat);
-                database.Despesas.Add(dados);
-                database.SaveChanges();
+                _context.Despesas.Add(dados);
+                _context.Add(dados);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             else
             {
-                ViewBag.Mes = database.Meses.ToList();
-                ViewBag.TipoDespesa = database.TipoDeDespesas.ToList();
-                return View("../Despesa/Novo");
+                ViewData["MesId"] = new SelectList(_context.Meses, "MesId", "Nome", dadosTemporario.MesId);
+                ViewData["TipoDeDespesaId"] = new SelectList(_context.TipoDeDespesas, "TipoDeDespesaId", "Nome", dadosTemporario.TipoDeDespesaId);
+                return View("../Despesa/Create");
             }
+
         }
 
-
-        public async Task<IActionResult> Atualizar(int? id)
+        // GET: Despesa/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
             }
 
-            var dados = await database.Despesas.FindAsync(id);
+            var dados = await _context.Despesas.FindAsync(id);
             if (dados == null)
             {
                 return NotFound();
             }
-
-            ViewBag.Mes = database.Meses.ToList();
-            ViewBag.TipoDespesa = database.TipoDeDespesas.ToList();
-
             DespesaDto dadosView = new DespesaDto();
             dadosView.DespesaId = dados.DespesaId;
             dadosView.MesId = dados.MesId;
             dadosView.TipoDeDespesaId = dados.TipoDeDespesaId;
             dadosView.ValorString = dados.Valor.ToString();
+
+            ViewData["MesId"] = new SelectList(_context.Meses, "MesId", "Nome", dadosView.MesId);
+            ViewData["TipoDeDespesaId"] = new SelectList(_context.TipoDeDespesas, "TipoDeDespesaId", "Nome", dadosView.TipoDeDespesaId);
+
             return View(dadosView);
         }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Atualizar(DespesaDto dadosTemporario)
+        public async Task<IActionResult> Edit(DespesaDto dadosTemporario)
         {
+
             if (ModelState.IsValid)
             {
                 TempData["confirmacao"] = " Despesa atualizado com sucesso.";
 
-                var dados = await database.Despesas.FindAsync(dadosTemporario.DespesaId);
+                var dados = await _context.Despesas.FindAsync(dadosTemporario.DespesaId);
                 dados.TipoDeDespesaId = dadosTemporario.TipoDeDespesaId;
                 dados.MesId = dadosTemporario.MesId;
                 dados.Valor = float.Parse(dadosTemporario.ValorString, CultureInfo.InvariantCulture.NumberFormat);
-                database.SaveChanges();
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
-
             }
             else
             {
-                ViewBag.Mes = database.Meses.ToList();
-                ViewBag.TipoDespesa = database.TipoDeDespesas.ToList();
-                return View("../Despesa/Atualizar");
+                ViewData["MesId"] = new SelectList(_context.Meses, "MesId", "Nome", dadosTemporario.MesId);
+                ViewData["TipoDeDespesaId"] = new SelectList(_context.TipoDeDespesas, "TipoDeDespesaId", "Nome", dadosTemporario.TipoDeDespesaId);
+
+                return View("../Despesa/Edit");
             }
+
         }
-
-
-
-        public async Task<IActionResult> Deletar(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var dados = await database.Despesas.FindAsync(id);
-            if (dados == null)
-            {
-                return NotFound();
-            }
-
-            ViewBag.Mes = database.Meses.ToList();
-            ViewBag.TipoDespesa = database.TipoDeDespesas.ToList();
-
-
-
-            DespesaDto dadosView = new DespesaDto();
-            dadosView.DespesaId = dados.DespesaId;
-            dadosView.MesId = dados.MesId;
-            dadosView.TipoDeDespesaId = dados.TipoDeDespesaId;
-            dadosView.ValorString = dados.Valor.ToString();
-            return View(dadosView);
-        }
-
 
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Deletar(int id)
+        public async Task<JsonResult> Deletar(int id)
         {
-            var dados = await database.Despesas.FindAsync(id);
+            var dados = await _context.Despesas.FindAsync(id);
 
             TempData["confirmacao"] = "Despesa foi excluido com sucesso.";
-
-            database.Despesas.Remove(dados);
-            await database.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            _context.Despesas.Remove(dados);
+            await _context.SaveChangesAsync();
+            return Json(dados.Mes + "excluido com sucesso.");
         }
+
+
 
 
         public JsonResult GestaoTotalMes(int mesId)
         {
             GastosTotaisMesViewsModel gastos = new GastosTotaisMesViewsModel();
-            gastos.ValorTotalGasto = database.Despesas.Where(d => d.Mes.MesId == mesId).Sum(d => d.Valor);
-            gastos.Salario = database.Salarios.Where(s => s.Mes.MesId == mesId).Select(s => s.Valor).FirstOrDefault();
+            gastos.ValorTotalGasto = _context.Despesas.Where(d => d.Mes.MesId == mesId).Sum(d => d.Valor);
+            gastos.Salario = _context.Salarios.Where(s => s.Mes.MesId == mesId).Select(s => s.Valor).FirstOrDefault();
             return Json(gastos);
 
         }
-
     }
 }
