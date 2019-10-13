@@ -7,7 +7,7 @@
         data: { mesId: mesId },
         success: function (dados) {
             $("canvas#GraficoGastoTotalMes").remove();
-            $("div.GraficoGastoTotalMes").append('<canvas id="GraficoGastoTotalMes" style="width:400px;height:400px;"></canvas>');
+            $("div.GraficoGastoTotalMes").append('<canvas id="GraficoGastoTotalMes" style="width:300px;height:300px;"></canvas>');
 
             var ctx = document.getElementById("GraficoGastoTotalMes").getContext("2d");
             var grafico = new Chart(ctx, {
@@ -47,7 +47,7 @@ function CarregarDadosGastosTotaisMes() {
         data: { mesId: 1 },
         success: function (dados) {
             $("canvas#GraficoGastoTotalMes").remove();
-            $("div.GraficoGastoTotalMes").append('<canvas id="GraficoGastoTotalMes" style="width:400px;height:400px;"></canvas>');
+            $("div.GraficoGastoTotalMes").append('<canvas id="GraficoGastoTotalMes" style="width:300px;height:300px;"></canvas>');
 
             var ctx = document.getElementById("GraficoGastoTotalMes").getContext("2d");
             var grafico = new Chart(ctx, {

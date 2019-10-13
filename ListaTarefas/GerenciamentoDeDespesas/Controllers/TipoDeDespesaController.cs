@@ -26,6 +26,17 @@ namespace GerenciamentoDeDespesas.Controllers
             return View(await _context.TipoDeDespesas.ToListAsync());
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Index(string txtProcurar)
+        {
+            if(!string.IsNullOrEmpty(txtProcurar))
+            {
+                return View(await _context.TipoDeDespesas.Where(td => td.Nome.ToUpper().Contains(txtProcurar.ToUpper())).ToListAsync());
+            }
+            return View(await _context.TipoDeDespesas.ToListAsync());
+        }
+
+
         // GET: TipoDeDespesa/Create
         public IActionResult Create()
         {
@@ -115,5 +126,26 @@ namespace GerenciamentoDeDespesas.Controllers
                 return Json("Este tipo de despesa já existe!");
             return Json(true);
         }
+
+        public JsonResult AdicionarDespesa(string txtDespesa)
+        {
+            if (!String.IsNullOrEmpty(txtDespesa))
+            {
+                if (!_context.TipoDeDespesas.Any(td => td.Nome.ToUpper() == txtDespesa.ToUpper()))
+                {
+                    TipoDeDespesa tipoDespesa = new TipoDeDespesa();
+                    tipoDespesa.Nome = txtDespesa;
+                    _context.Add(tipoDespesa);
+                    _context.SaveChanges();
+                    return Json(true);
+                }
+            }
+
+            return Json(false);
+        }
+
+
+
+
     }
 }

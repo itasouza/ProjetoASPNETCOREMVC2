@@ -28,6 +28,15 @@ namespace GerenciamentoDeDespesas.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Index(string txtProcurar)
+        {
+            if (!string.IsNullOrEmpty(txtProcurar))
+            {
+                return View(await _context.Salarios.Include(s => s.Mes).Where(m => m.Mes.Nome.ToUpper().Contains(txtProcurar.ToUpper())).ToListAsync());
+            }
+            return View(await _context.Salarios.Include(s => s.Mes).ToListAsync());
+        }
 
 
         // GET: Salario/Create

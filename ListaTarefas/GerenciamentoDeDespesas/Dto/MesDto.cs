@@ -11,6 +11,7 @@ namespace GerenciamentoDeDespesas.Dto
     {
         [Key]
         [Required]
+        [Display(Name = "Selecione um mês")]
         public int MesId { get; set; }
 
         [Required(ErrorMessage = "Nome do Mês é obrigatório")]

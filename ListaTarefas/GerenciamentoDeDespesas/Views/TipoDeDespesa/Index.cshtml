@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<GerenciamentoDeDespesas.Models.TipoDeDespesa>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "";
 }
 
 @section Styles
@@ -24,9 +24,22 @@
 }
 
 
+
+
 <p>
     <a asp-action="Create" asp-controller="TipoDeDespesa" class="btn btn-success">Adicionar</a>
 </p>
+
+<form asp-controller="TipoDeDespesa" asp-action="Index" method="post">
+    <div class="form-group">
+        <div class="input-group col-md-6">
+            <input class="form-control" name="txtProcurar" />
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+        </div>
+    </div>
+</form>
 
 <table id="dados" class="table table-hover display responsive nowrap table-sm " cellspacing="0" width="100%">
     <thead>
@@ -43,18 +56,18 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoDeDespesaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td class="text-right">
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.TipoDeDespesaId">Edição</a> |
-                <a class="btn btn-danger mouse" onclick="ExibirModal(@item.TipoDeDespesaId,'@item.Nome')">Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoDeDespesaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.TipoDeDespesaId">Edição</a> |
+                    <a class="btn btn-danger mouse" onclick="ExibirModal(@item.TipoDeDespesaId,'@item.Nome')">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

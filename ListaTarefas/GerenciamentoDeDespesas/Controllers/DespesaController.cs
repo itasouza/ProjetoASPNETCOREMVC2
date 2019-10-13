@@ -10,6 +10,7 @@ using GerenciamentoDeDespesas.Models;
 using GerenciamentoDeDespesas.Dto;
 using System.Globalization;
 using GerenciamentoDeDespesas.ViewsModels;
+using X.PagedList;
 
 namespace GerenciamentoDeDespesas.Controllers
 {
@@ -23,12 +24,16 @@ namespace GerenciamentoDeDespesas.Controllers
         }
 
         // GET: Despesa
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? pagina)
         {
+
+            const int itensPagina = 10;
+            int numeroPagina = (pagina ?? 1);
+
             ViewBag.Mes = new SelectList(_context.Meses.Where(x => x.MesId == x.Salario.MesId), "MesId", "Nome");
 
-            var applicationDbContext = _context.Despesas.Include(d => d.Mes).Include(d => d.TipoDeDespesa);
-            return View(await applicationDbContext.ToListAsync());
+            var contexto = _context.Despesas.Include(d => d.Mes).Include(d => d.TipoDeDespesa);
+            return View(await contexto.ToListAsync());
         }
 
 

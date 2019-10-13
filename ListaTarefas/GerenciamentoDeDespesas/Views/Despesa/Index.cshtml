@@ -1,7 +1,13 @@
 ﻿@model IEnumerable<GerenciamentoDeDespesas.Models.Despesa>
+@*@model X.PagedList.IPagedList<GerenciamentoDeDespesas.Models.Despesa>
+    @using X.PagedList.Mvc.Core
+    @using X.PagedList.Mvc.Common*@
+
+
+
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Despesas Cadastradas";
 }
 
 @section Styles
@@ -23,10 +29,11 @@
 
 }
 
-
 <p>
     <a asp-action="Create" asp-controller="Despesa" class="btn btn-success">Adicionar</a>
 </p>
+
+
 
 <div class="form-group col-lg-12">
     <label for="genero">Selecione um Mês*</label>
@@ -41,23 +48,27 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col">
-        <partial name="_GastoTotalMes" />
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <partial name="_GastoTotalMes" />
+        </div>
     </div>
 </div>
+
+
 
 <table id="dados" class="table table-hover display responsive nowrap table-sm " cellspacing="0" width="100%">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Mes.Nome)
+                Nome do Mês
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipoDeDespesa.Nome)
+                Nome do tipo de despesa
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Valor)
+                Valor da despesa
             </th>
             <th></th>
         </tr>
@@ -83,6 +94,13 @@
         }
     </tbody>
 </table>
+
+
+@*@Html.PagedListPager(Model, pagina => Url.Action("Index", "Despesa", new { pagina }), new PagedListRenderOptionsBase
+    {
+        LiElementClasses = new string[] { "page-item"},
+        PageClasses = new string[] { "page-link"}
+    });*@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">

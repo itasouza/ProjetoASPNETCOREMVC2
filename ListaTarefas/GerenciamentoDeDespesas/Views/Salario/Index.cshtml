@@ -27,6 +27,16 @@
     <a asp-action="Create" asp-controller="Salario" class="btn btn-success">Adicionar</a>
 </p>
 
+<form asp-controller="Salario" asp-action="Index" method="post">
+    <div class="form-group">
+        <div class="input-group col-md-6">
+            <input class="form-control" name="txtProcurar" />
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-angle-double-right"></i></button>
+            </div>
+        </div>
+    </div>
+</form>
 
 <table id="dados" class="table table-hover display responsive nowrap table-sm " cellspacing="0" width="100%">
     <thead>
