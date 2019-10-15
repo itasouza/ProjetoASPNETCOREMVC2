@@ -2,7 +2,7 @@
     var mesId = $(".escolherMes").val();
 
     $.ajax({
-        url: "Despesa/GestaoTotalMes",
+        url: "Despesa/GastoTotalMes",
         method: "POST",
         data: { mesId: mesId },
         success: function (dados) {
@@ -42,7 +42,7 @@ function CarregarDadosGastosTotaisMes() {
     var mesId = $(".escolherMes").val();
 
     $.ajax({
-        url: "Despesa/GestaoTotalMes",
+        url: "Despesa/GastoTotalMes",
         method: "POST",
         data: { mesId: 1 },
         success: function (dados) {

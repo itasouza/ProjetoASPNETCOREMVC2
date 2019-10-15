@@ -78,3 +78,4 @@ C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\GerenciamentoDeDespesas\obj\Debug\n
 C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\GerenciamentoDeDespesas\obj\Debug\netcoreapp2.2\GerenciamentoDeDespesas.dll
 C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\GerenciamentoDeDespesas\obj\Debug\netcoreapp2.2\GerenciamentoDeDespesas.pdb
 C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\GerenciamentoDeDespesas\obj\Debug\netcoreapp2.2\GerenciamentoDeDespesas.csproj.CopyComplete
+C:\GitHub\ProjetoASPNETCOREMVC2\ListaTarefas\GerenciamentoDeDespesas\obj\Debug\netcoreapp2.2\Razor\Views\Despesa\_GastoMes.g.cshtml.cs

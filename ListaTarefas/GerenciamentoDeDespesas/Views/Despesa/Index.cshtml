@@ -53,6 +53,9 @@
         <div class="col-12">
             <partial name="_GastoTotalMes" />
         </div>
+        <div class="col-12">
+            <partial name="_GastoMes" />
+        </div>
     </div>
 </div>
 
@@ -129,11 +132,15 @@
 
 @section Scripts {
 
+    <script src="~/js/MetodosGerais.js"></script>
+    <script src="~/js/GraficoGastoMes.js"></script>
     <script src="~/js/GraficoTotalMes.js"></script>
 
     <script>
 
+
         CarregarDadosGastosTotaisMes();
+        CarregarDadosGastosMes();
 
         function ExibirModal(idRecebido, nome) {
 

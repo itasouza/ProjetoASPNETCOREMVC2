@@ -27,7 +27,7 @@ namespace GerenciamentoDeDespesas.Controllers
         public async Task<IActionResult> Index(int? pagina)
         {
 
-            const int itensPagina = 10;
+            //const int itensPagina = 10;
             int numeroPagina = (pagina ?? 1);
 
             ViewBag.Mes = new SelectList(_context.Meses.Where(x => x.MesId == x.Salario.MesId), "MesId", "Nome");
@@ -141,7 +141,7 @@ namespace GerenciamentoDeDespesas.Controllers
 
 
 
-        public JsonResult GestaoTotalMes(int mesId)
+        public JsonResult GastoTotalMes(int mesId)
         {
             GastosTotaisMesViewsModel gastos = new GastosTotaisMesViewsModel();
             gastos.ValorTotalGasto = _context.Despesas.Where(d => d.Mes.MesId == mesId).Sum(d => d.Valor);
@@ -149,5 +149,21 @@ namespace GerenciamentoDeDespesas.Controllers
             return Json(gastos);
 
         }
+
+        public JsonResult GastoMes(int mesId)
+        {
+            var query = from despesas in _context.Despesas
+                        where despesas.Mes.MesId == mesId
+                        group despesas by despesas.TipoDeDespesa.Nome into g
+                        select new {
+                            TipoDeDespesa = g.Key,
+                            Valores = g.Sum(d => d.Valor)
+                        };
+
+            return Json(query);
+
+        }
+
+
     }
 }
