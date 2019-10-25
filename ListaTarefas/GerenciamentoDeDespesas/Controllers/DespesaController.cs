@@ -27,13 +27,13 @@ namespace GerenciamentoDeDespesas.Controllers
         public async Task<IActionResult> Index(int? pagina)
         {
 
-            //const int itensPagina = 10;
+            const int itensPagina = 10;
             int numeroPagina = (pagina ?? 1);
 
             ViewBag.Mes = new SelectList(_context.Meses.Where(x => x.MesId == x.Salario.MesId), "MesId", "Nome");
 
-            var contexto = _context.Despesas.Include(d => d.Mes).Include(d => d.TipoDeDespesa);
-            return View(await contexto.ToListAsync());
+            var contexto = _context.Despesas.Include(d => d.Mes).Include(d => d.TipoDeDespesa).OrderBy(d => d.MesId);
+            return View(await contexto.ToPagedListAsync(numeroPagina, itensPagina));
         }
 
 
@@ -152,11 +152,13 @@ namespace GerenciamentoDeDespesas.Controllers
 
         public JsonResult GastoMes(int mesId)
         {
+
             var query = from despesas in _context.Despesas
                         where despesas.Mes.MesId == mesId
                         group despesas by despesas.TipoDeDespesa.Nome into g
-                        select new {
-                            TipoDeDespesa = g.Key,
+                        select new
+                        {
+                            TiposDespesa = g.Key,
                             Valores = g.Sum(d => d.Valor)
                         };
 
@@ -164,6 +166,15 @@ namespace GerenciamentoDeDespesas.Controllers
 
         }
 
+        public JsonResult GastosTotais()
+        {
+            var query = _context.Despesas
+                .OrderBy(m => m.Mes.MesId)
+                .GroupBy(m => m.Mes.MesId)
+                .Select(d => new { NomeMeses = d.Select(x => x.Mes.Nome).Distinct(), Valores = d.Sum(x => x.Valor) });
+
+            return Json(query);
+        }
 
     }
 }

@@ -1,7 +1,6 @@
-﻿@model IEnumerable<GerenciamentoDeDespesas.Models.Despesa>
-@*@model X.PagedList.IPagedList<GerenciamentoDeDespesas.Models.Despesa>
-    @using X.PagedList.Mvc.Core
-    @using X.PagedList.Mvc.Common*@
+﻿@model X.PagedList.IPagedList<GerenciamentoDeDespesas.Models.Despesa>
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Mvc.Common
 
 
 
@@ -50,119 +49,130 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-6">
             <partial name="_GastoTotalMes" />
         </div>
-        <div class="col-12">
+        <div class="col-6">
             <partial name="_GastoMes" />
         </div>
     </div>
-</div>
 
 
 
-<table id="dados" class="table table-hover display responsive nowrap table-sm " cellspacing="0" width="100%">
-    <thead>
-        <tr>
-            <th>
-                Nome do Mês
-            </th>
-            <th>
-                Nome do tipo de despesa
-            </th>
-            <th>
-                Valor da despesa
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mes.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TipoDeDespesa.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Valor)
-                </td>
-                <td class="text-right">
-                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.DespesaId">Edição</a> |
-                    <a class="btn btn-danger mouse" onclick="ExibirModal(@item.DespesaId,'@item.Mes.Nome')">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-
-@*@Html.PagedListPager(Model, pagina => Url.Action("Index", "Despesa", new { pagina }), new PagedListRenderOptionsBase
-    {
-        LiElementClasses = new string[] { "page-item"},
-        PageClasses = new string[] { "page-link"}
-    });*@
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"></h4>
-            </div>
-            <div class="modal-body">
-                <p>Deseja prosseguir com exclusão de <text class="nome font-weight-bold"></text></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
-                <button type="button" class="btn btn-primary btnExcluir">Sim</button>
-            </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <partial name="_GastosTotais" />
         </div>
 
     </div>
+
 </div>
+ <br />
+
+    <table id="dados" class="table table-hover display responsive nowrap table-sm " cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>
+                    Nome do Mês
+                </th>
+                <th>
+                    Nome do tipo de despesa
+                </th>
+                <th>
+                    Valor da despesa
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mes.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoDeDespesa.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Valor)
+                    </td>
+                    <td class="text-right">
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.DespesaId">Edição</a> |
+                        <a class="btn btn-danger mouse" onclick="ExibirModal(@item.DespesaId,'@item.Mes.Nome')">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @Html.PagedListPager(Model, pagina => Url.Action("Index", "Despesa", new { pagina }), new PagedListRenderOptionsBase
+    {
+        LiElementClasses = new string[] { "page-item" },
+        PageClasses = new string[] { "page-link" }
+    })
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>Deseja prosseguir com exclusão de <text class="nome font-weight-bold"></text></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-primary btnExcluir">Sim</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 
 
-@section Scripts {
+    @section Scripts {
 
-    <script src="~/js/MetodosGerais.js"></script>
-    <script src="~/js/GraficoGastoMes.js"></script>
-    <script src="~/js/GraficoTotalMes.js"></script>
+        <script src="~/js/MetodosGerais.js"></script>
+        <script src="~/js/GraficoGastoMes.js"></script>
+        <script src="~/js/GraficoTotalMes.js"></script>
+        <script src="~/js/GraficoGastosTotais.js"></script>
 
-    <script>
-
-
-        CarregarDadosGastosTotaisMes();
-        CarregarDadosGastosMes();
-
-        function ExibirModal(idRecebido, nome) {
-
-            $(".nome")[0].innerHTML = nome;
-            $(".modal").modal();
-
-            $(".btnExcluir").on("click", function () {
-
-                $.ajax({
-                    url: "/Despesa/Deletar",
-                    method: "POST",
-                    data: { id: idRecebido },
-                    success: function (data) {
-                        console.log(data);
-                        $(".modal").modal("hide");
-                        location.reload(true);
-                    }
-                })
-            });
-
-        };
+        <script>
 
 
-    </script>
-}
+            CarregarDadosGastosMes();
+            CarregarDadosGastosTotaisMes();
+            CarregarDadosGastosTotais();
+
+
+            function ExibirModal(idRecebido, nome) {
+
+                $(".nome")[0].innerHTML = nome;
+                $(".modal").modal();
+
+                $(".btnExcluir").on("click", function () {
+
+                    $.ajax({
+                        url: "/Despesa/Deletar",
+                        method: "POST",
+                        data: { id: idRecebido },
+                        success: function (data) {
+                            console.log(data);
+                            $(".modal").modal("hide");
+                            location.reload(true);
+                        }
+                    })
+                });
+
+            };
+
+
+        </script>
+    }

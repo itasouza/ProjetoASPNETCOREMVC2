@@ -12,13 +12,13 @@
 }
 
 function PegarTiposDespesas(dados) {
-
+   
     var labels = [];
     var tamanho = dados.length;
     var indice = 0;
 
     while (indice < tamanho) {
-        labels.push(dados[indice].tiposDespesas);
+        labels.push(dados[indice].TipoDeDespesa);
         indice++;
     }
 
