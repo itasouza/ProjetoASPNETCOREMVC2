@@ -32,3 +32,4 @@ C:\GitHub\ProjetoASPNETCOREMVC2\ProjetoImagens\ProjetoImagens\obj\Debug\netcorea
 C:\GitHub\ProjetoASPNETCOREMVC2\ProjetoImagens\ProjetoImagens\obj\Debug\netcoreapp2.2\ProjetoImagens.dll
 C:\GitHub\ProjetoASPNETCOREMVC2\ProjetoImagens\ProjetoImagens\obj\Debug\netcoreapp2.2\ProjetoImagens.pdb
 C:\GitHub\ProjetoASPNETCOREMVC2\ProjetoImagens\ProjetoImagens\obj\Debug\netcoreapp2.2\ProjetoImagens.csproj.CopyComplete
+C:\GitHub\ProjetoASPNETCOREMVC2\ProjetoImagens\ProjetoImagens\obj\Debug\netcoreapp2.2\ProjetoImagens.csprojAssemblyReference.cache

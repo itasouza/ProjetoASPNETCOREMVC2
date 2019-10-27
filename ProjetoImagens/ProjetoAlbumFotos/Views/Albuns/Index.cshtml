@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ProjetoAlbumFotos.Models.Album>
+
+@{
+    ViewData["Title"] = "Albuns";
+}
+
+<div class="listDestinos">
+
+    <div class="container">
+
+        <p>
+            <a asp-action="Create" class="waves-effect waves-light btn-small">Novo Album</a>
+        </p>
+        <table class="table striped highlight hover responsive-table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Destino)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DataInicio)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DataFim)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Destino)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataInicio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataFim)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.AlbumId" class="btn-small blue darken-2">Atualizar</a> |
+                            <a asp-action="Details" asp-route-id="@item.AlbumId" class="btn-small orange darken-4">Fotos</a> |
+                            <a class="btn-small red darken-4 modal-trigger" data-target="modal" onclick="Excluir(@item.AlbumId)">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Modal Structure -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h4>Confirmar Exclusão</h4>
+        <p>Deseja proseguir com a exclusão?</p>
+    </div>
+    <div class="modal-footer">
+        <a  class="modal-close waves-effect waves-green btn-flat btn-Confirmar">Sim</a>
+        <a  class="modal-close waves-effect waves-green btn-flat">Não</a>
+    </div>
+</div>
+
+@section Scripts {
+
+
+    <script>
+
+
+       function Excluir(idRecebido) {
+
+            $(".modal").modal();
+
+           $(".btn-Confirmar").on("click", function () {
+
+                $.ajax({
+                    url: "/Albuns/Delete",
+                    method: "POST",
+                    data: { id: idRecebido },
+                    success: function (data) {
+                        console.log(data);
+                        $(".modal").modal("close");
+                        location.reload(true);
+                    }
+                })
+            });
+
+        };
+
+    </script>
+}
