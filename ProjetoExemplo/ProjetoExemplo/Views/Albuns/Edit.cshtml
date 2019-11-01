@@ -1,0 +1,80 @@
+﻿@model ProjetoExemplo.Models.Album
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Album</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AlbumId" />
+            <div class="form-group">
+                <label asp-for="Destino" class="control-label"></label>
+                <input asp-for="Destino" class="form-control" />
+                <span asp-validation-for="Destino" class="text-danger"></span>
+            </div>
+
+            @if (Model.FotoTopo != null)
+            {
+                <img id="imagem" src="@Url.Content(Model.FotoTopo)" width="50%" height="50%" alt="Foto" />
+            }
+            else
+            {
+                <img id="imagem" src="#" alt="Foto" />
+            }
+
+            <div class="file-field form-group">
+                <div class="btn-small">
+                    <span>Selecione o arquivo</span>
+                    <input asp-for="FotoTopo" class="form-control" type="file" name="arquivo" onchange="CarregarImagem(this)" />
+                    <span asp-validation-for="FotoTopo" class="text-danger"></span>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path-wrapper validate" type="text" placeholder="Faça o upload da foto" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="DataInicio" class="control-label">Data de Início</label>
+                <input asp-for="DataInicio" type="text" name="DataInicio" class="form-control datepicker" id="DataInicio">
+                <span asp-validation-for="DataInicio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DataFim" class="control-label">Data fim</label>
+                <input asp-for="DataFim" type="text" name="DataFim" class="form-control datepicker" id="DataFim">
+                <span asp-validation-for="DataFim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />&nbsp;
+                <a asp-action="Index" class="btn btn-info">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+
+        function CarregarImagem(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imagem').attr('src', e.target.result).width("50%").height("50%");
+                }
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+
+    </script>
+
+}

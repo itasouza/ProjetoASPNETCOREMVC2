@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery-validate@1.19.1",
+      "destination": "wwwroot/lib/jquery-validate/",
+      "files": [
+        "localization/messages_pt_BR.min.js"
+      ]
+    },
+    {
+      "library": "globalize@1.4.2",
+      "destination": "wwwroot/lib/globalize/",
+      "files": [
+        "globalize.min.js",
+        "globalize/date.min.js",
+        "globalize/number.min.js",
+        "globalize/currency.min.js",
+        "globalize/message.min.js"
+      ]
+    }
+  ]
+}

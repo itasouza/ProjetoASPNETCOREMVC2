@@ -1,0 +1,84 @@
+﻿@model ProjetoExemplo.Models.Album
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Album</h4>
+<hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Destino" class="control-label"></label>
+                        <input asp-for="Destino" class="form-control" />
+                        <span asp-validation-for="Destino" class="text-danger"></span>
+                    </div>
+
+                    <img id="imagem" src="#" alt="Foto" />
+                    <div class="file-field form-group">
+                        <div class="btn-small">
+                            <span>Selecione o arquivo</span>
+                            <input asp-for="FotoTopo" class="form-control" type="file" name="arquivo" onchange="CarregarImagem(this)" />
+                            <span asp-validation-for="FotoTopo" class="text-danger"></span>
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path-wrapper validate" type="text" placeholder="Faça o upload da foto" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="DataInicio" class="control-label"></label>
+                        <input asp-for="DataInicio" class="form-control datepicker" type="text"/>
+                        <span asp-validation-for="DataInicio" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DataFim" class="control-label"></label>
+                        <input asp-for="DataFim" class="form-control datepicker" type="text"/>
+                        <span asp-validation-for="DataFim" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Salvar" class="btn-small" /> &nbsp;
+                        <a asp-action="Index" class="btn-small grey darken-3">Voltar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+
+       $(document).ready(function () {
+
+            $('#imagem').hide();
+
+        });
+
+        function CarregarImagem(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                $('#imagem').show();
+                reader.onload = function (e) {
+                    $('#imagem').attr('src', e.target.result).width("50%").height("50%");
+                }
+            }
+            reader.readAsDataURL(input.files[0]);
+        };
+
+
+    </script>
+
+}
+
