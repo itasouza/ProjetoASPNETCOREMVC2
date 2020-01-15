@@ -12,12 +12,10 @@ namespace PadraoRepositorio.Controllers
 {
     public class PessoasController : Controller
     {       
-        private readonly IPessoaRepositorio _pessoaRepositorio;
         private readonly IPessoaGenerico _pessoaGenerico;
 
-        public PessoasController(IPessoaRepositorio pessoaRepositorio, IPessoaGenerico pessoaGenerico)
+        public PessoasController(IPessoaGenerico pessoaGenerico)
         {           
-            _pessoaRepositorio = pessoaRepositorio;
             _pessoaGenerico = pessoaGenerico;
         }
 
