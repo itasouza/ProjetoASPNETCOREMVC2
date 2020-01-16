@@ -1,0 +1,203 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia\\ProjetoFichaAcademia.csproj": {}
+  },
+  "projects": {
+    "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.AcessoDados\\ProjetoFichaAcademia.AcessoDados.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.AcessoDados\\ProjetoFichaAcademia.AcessoDados.csproj",
+        "projectName": "ProjetoFichaAcademia.AcessoDados",
+        "projectPath": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.AcessoDados\\ProjetoFichaAcademia.AcessoDados.csproj",
+        "packagesPath": "C:\\Users\\PCEstudo\\.nuget\\packages\\",
+        "outputPath": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.AcessoDados\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PCEstudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.Dominio\\ProjetoFichaAcademia.Dominio.csproj": {
+                "projectPath": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.Dominio\\ProjetoFichaAcademia.Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.Dominio\\ProjetoFichaAcademia.Dominio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.Dominio\\ProjetoFichaAcademia.Dominio.csproj",
+        "projectName": "ProjetoFichaAcademia.Dominio",
+        "projectPath": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.Dominio\\ProjetoFichaAcademia.Dominio.csproj",
+        "packagesPath": "C:\\Users\\PCEstudo\\.nuget\\packages\\",
+        "outputPath": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.Dominio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PCEstudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia\\ProjetoFichaAcademia.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia\\ProjetoFichaAcademia.csproj",
+        "projectName": "ProjetoFichaAcademia",
+        "projectPath": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia\\ProjetoFichaAcademia.csproj",
+        "packagesPath": "C:\\Users\\PCEstudo\\.nuget\\packages\\",
+        "outputPath": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PCEstudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.AcessoDados\\ProjetoFichaAcademia.AcessoDados.csproj": {
+                "projectPath": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.AcessoDados\\ProjetoFichaAcademia.AcessoDados.csproj"
+              },
+              "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.Dominio\\ProjetoFichaAcademia.Dominio.csproj": {
+                "projectPath": "C:\\src\\ProjetoASPNETCOREMVC2\\ProjetoFichaAcademia\\ProjetoFichaAcademia.Dominio\\ProjetoFichaAcademia.Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Rotativa.AspNetCore": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

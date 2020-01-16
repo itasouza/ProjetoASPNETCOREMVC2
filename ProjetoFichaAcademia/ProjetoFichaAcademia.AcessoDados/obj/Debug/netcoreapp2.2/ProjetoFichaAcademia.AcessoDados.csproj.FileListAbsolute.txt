@@ -1,0 +1,11 @@
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\bin\Debug\netcoreapp2.2\ProjetoFichaAcademia.Dominio.dll
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.AcessoDados.csprojAssemblyReference.cache
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.AcessoDados.AssemblyInfoInputs.cache
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.AcessoDados.AssemblyInfo.cs
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\bin\Debug\netcoreapp2.2\ProjetoFichaAcademia.AcessoDados.deps.json
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\bin\Debug\netcoreapp2.2\ProjetoFichaAcademia.AcessoDados.dll
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\bin\Debug\netcoreapp2.2\ProjetoFichaAcademia.AcessoDados.pdb
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\bin\Debug\netcoreapp2.2\ProjetoFichaAcademia.Dominio.pdb
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.AcessoDados.csproj.CopyComplete
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.AcessoDados.dll
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.AcessoDados\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.AcessoDados.pdb

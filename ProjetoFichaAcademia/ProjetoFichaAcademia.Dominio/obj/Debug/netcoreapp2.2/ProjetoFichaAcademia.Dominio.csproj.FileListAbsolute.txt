@@ -1,0 +1,8 @@
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.Dominio\bin\Debug\netcoreapp2.2\ProjetoFichaAcademia.Dominio.deps.json
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.Dominio\bin\Debug\netcoreapp2.2\ProjetoFichaAcademia.Dominio.dll
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.Dominio\bin\Debug\netcoreapp2.2\ProjetoFichaAcademia.Dominio.pdb
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.Dominio\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.Dominio.csprojAssemblyReference.cache
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.Dominio\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.Dominio.AssemblyInfoInputs.cache
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.Dominio\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.Dominio.AssemblyInfo.cs
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.Dominio\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.Dominio.dll
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia.Dominio\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.Dominio.pdb
