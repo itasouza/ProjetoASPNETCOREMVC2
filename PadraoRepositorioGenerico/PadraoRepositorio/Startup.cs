@@ -29,7 +29,6 @@ namespace PadraoRepositorio
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Contexto>(opcoes => opcoes.UseSqlServer(Configuration.GetConnectionString("Conexao")));
-            services.AddTransient<IPessoaRepositorio, PessoaRepositorio>();
             services.AddTransient<IPessoaGenerico, PessoaRepositorioGenerico>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

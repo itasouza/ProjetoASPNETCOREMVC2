@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\src\\ProjetoASPNETCOREMVC2\\PadraoRepositorio\\PadraoRepositorio\\PadraoRepositorio.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\src\\ProjetoASPNETCOREMVC2\\PadraoRepositorio\\PadraoRepositorio\\PadraoRepositorio.csproj",
         "packagesPath": "C:\\Users\\PCEstudo\\.nuget\\packages\\",
         "outputPath": "C:\\src\\ProjetoASPNETCOREMVC2\\PadraoRepositorio\\PadraoRepositorio\\obj\\",
+=======
+    "C:\\GitHub\\ProjetoASPNETCOREMVC2\\PadraoRepositorio\\PadraoRepositorio\\PadraoRepositorio.csproj": {}
+  },
+  "projects": {
+    "C:\\GitHub\\ProjetoASPNETCOREMVC2\\PadraoRepositorio\\PadraoRepositorio\\PadraoRepositorio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\GitHub\\ProjetoASPNETCOREMVC2\\PadraoRepositorio\\PadraoRepositorio\\PadraoRepositorio.csproj",
+        "projectName": "PadraoRepositorio",
+        "projectPath": "C:\\GitHub\\ProjetoASPNETCOREMVC2\\PadraoRepositorio\\PadraoRepositorio\\PadraoRepositorio.csproj",
+        "packagesPath": "C:\\Users\\isouza\\.nuget\\packages\\",
+        "outputPath": "C:\\GitHub\\ProjetoASPNETCOREMVC2\\PadraoRepositorio\\PadraoRepositorio\\obj\\",
+>>>>>>> baa7f1186357bd13947736472a2611bfeb94f129
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PCEstudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
