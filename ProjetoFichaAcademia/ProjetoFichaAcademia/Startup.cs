@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProjetoFichaAcademia.AcessoDados;
+using ProjetoFichaAcademia.AcessoDados.Interfaces;
+using ProjetoFichaAcademia.AcessoDados.Repositorios;
 using Rotativa.AspNetCore;
 
 namespace ProjetoFichaAcademia
@@ -37,6 +39,16 @@ namespace ProjetoFichaAcademia
             });
 
             services.AddDbContext<Contexto>(opcoes => opcoes.UseSqlServer(Configuration.GetConnectionString("conexao")));
+
+
+            services.AddTransient<ICategoriaExercicioRepositorio, CategoriaExercicioRepositorio>();
+            services.AddTransient<IAdministradorRepositorio, AdministradorRepositorio>();
+            services.AddTransient<IExercicioRepositorio, ExercicioRepositorio>();
+            services.AddTransient<IProfessorRepositorio, ProfessorRepositorio>();
+            services.AddTransient<IObjetivoRepositorio, ObjetivoRepositorio>();
+            services.AddTransient<IAlunoRepositorio, AlunoRepositorio>();
+            services.AddTransient<IFichaRepositorio, FichaRepositorio>();
+            services.AddTransient<IListaExercicioRepositorio, ListaExercicioRepositorio>();
 
             //usando sessão
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
