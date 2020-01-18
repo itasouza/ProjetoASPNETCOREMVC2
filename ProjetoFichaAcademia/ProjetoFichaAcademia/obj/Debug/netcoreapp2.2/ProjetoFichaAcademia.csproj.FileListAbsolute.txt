@@ -31,3 +31,6 @@ C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia\obj\Debug
 C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.csproj.CopyComplete
 C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.dll
 C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia\obj\Debug\netcoreapp2.2\ProjetoFichaAcademia.pdb
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia\obj\Debug\netcoreapp2.2\Razor\Views\CategoriasExercicios\Create.cshtml.g.cs
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia\obj\Debug\netcoreapp2.2\Razor\Views\CategoriasExercicios\Edit.cshtml.g.cs
+C:\src\ProjetoASPNETCOREMVC2\ProjetoFichaAcademia\ProjetoFichaAcademia\obj\Debug\netcoreapp2.2\Razor\Views\CategoriasExercicios\Index.cshtml.g.cs
