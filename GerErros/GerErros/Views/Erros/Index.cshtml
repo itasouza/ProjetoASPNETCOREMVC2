@@ -1,0 +1,26 @@
+﻿@model int
+@{
+    var codigoErro = Model;
+    var mensagem = "";
+
+    switch (codigoErro)
+    {
+        case 404:
+            mensagem = "Página não encontrada";
+            break;
+
+        case 500:
+            mensagem = "Erro no servidor - O servidor não conseguiu completar a requisição";
+            break;
+
+        default:
+            mensagem = "Erro - algo inesperado aconteceu";
+            break;
+
+    }
+}
+
+<div class="jumbotron">
+    <h1>Erro @Model</h1>
+    <h3>@mensagem</h3>
+</div>
