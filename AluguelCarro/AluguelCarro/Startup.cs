@@ -12,6 +12,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AluguelCarro.Models;
+using AluguelCarro.AcessoDados.Interfaces;
+using AluguelCarro.AcessoDados.Repositorios;
 
 namespace AluguelCarro
 {
@@ -34,13 +36,13 @@ namespace AluguelCarro
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //1- confgurando a conexão 
-            services.AddDbContext<Context>(options =>
+            //1- configurando a conexão 
+            services.AddDbContext<Contexto>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("conexao")));
 
             //2 configurando o Identity
-            services.AddIdentity<Usuario,NiveisAcesso>().AddDefaultUI().AddEntityFrameworkStores<Context>();
+            services.AddIdentity<Usuario,NiveisAcesso>().AddDefaultUI().AddEntityFrameworkStores<Contexto>();
 
             //3 - configurando o Cookie
             services.ConfigureApplicationCookie(opcoes =>
@@ -62,7 +64,13 @@ namespace AluguelCarro
                 opcoes.Password.RequiredUniqueChars = 1;
             });
 
-
+            //5-adicionar o repositório 
+            services.AddScoped<INivelAcessoRepositorio, NivelAcessoRepositorio>();
+          //  services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+           // services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
+            //services.AddScoped<IContaRepositorio, ContaRepositorio>();
+           // services.AddScoped<ICarroRepositorio, CarroRepositorio>();
+           // services.AddScoped<IAluguelRepositorio, AluguelRepositorio>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

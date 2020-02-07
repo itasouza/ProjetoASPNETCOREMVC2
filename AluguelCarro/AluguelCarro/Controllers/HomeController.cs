@@ -10,6 +10,7 @@ namespace AluguelCarro.Controllers
 {
     public class HomeController : Controller
     {
+        //https://github.com/thiagopaivamed/Aula-124
         public IActionResult Index()
         {
             return View();
