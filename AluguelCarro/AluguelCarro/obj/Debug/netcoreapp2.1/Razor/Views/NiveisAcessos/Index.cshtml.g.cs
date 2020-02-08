@@ -75,7 +75,7 @@ using AluguelCarro.Models;
             WriteLiteral("\r\n<div class=\"border border-light rounded shadow\">\r\n    <div class=\"container\">\r\n        <h3 class=\"titulo\">\r\n            <i class=\"fas fa-user-lock fa-lg\"></i> &nbsp; Niveis de Acessos &nbsp;\r\n            ");
             EndContext();
             BeginContext(411, 182, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "313f1e67f9c843baad6359d888533286", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "418d0f2cbfdf4e38876c58ea91580c00", async() => {
                 BeginContext(549, 40, true);
                 WriteLiteral("<i class=\"fas fa-plus-circle fa-lg\"></i>");
                 EndContext();
@@ -150,7 +150,7 @@ using AluguelCarro.Models;
             WriteLiteral("\r\n                        </td>\r\n\r\n\r\n                        <td>\r\n                            ");
             EndContext();
             BeginContext(1544, 185, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4c5bf23132646c18378bde4403a9bc9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad91ea1c5b6e4303b2edf69514e4c12a", async() => {
                 BeginContext(1698, 27, true);
                 WriteLiteral("<i class=\"far fa-edit\"></i>");
                 EndContext();
@@ -223,7 +223,7 @@ WriteAttributeValue("", 1929, controller, 1929, 11, false);
             WriteLiteral("            </tbody>\r\n        </table>\r\n    </div>\r\n</div>\r\n\r\n");
             EndContext();
             BeginContext(2121, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "beaa846982bc48ffb08e3e5989edf8ed", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fe3a7a7650fa47528dce5c19d25b29f1", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

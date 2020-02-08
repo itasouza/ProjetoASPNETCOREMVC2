@@ -66,7 +66,7 @@ namespace AluguelCarro
 
             //5-adicionar o repositório 
             services.AddScoped<INivelAcessoRepositorio, NivelAcessoRepositorio>();
-          //  services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
            // services.AddScoped<IEnderecoRepositorio, EnderecoRepositorio>();
             //services.AddScoped<IContaRepositorio, ContaRepositorio>();
            // services.AddScoped<ICarroRepositorio, CarroRepositorio>();

@@ -1,4 +1,12 @@
 ﻿<!DOCTYPE html>
+
+@{
+    ViewData["Title"] = "Meus dados";
+    bool autenticado = User.Identity.IsAuthenticated;
+
+}
+
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -47,6 +55,8 @@
                             <a class="nav-link navbar-text text-white" asp-action="Index" asp-controller="Carros">Carros</a>
                         </li>
                     }
+
+     
 
                     @if (User.IsInRole("Administrador"))
                     {

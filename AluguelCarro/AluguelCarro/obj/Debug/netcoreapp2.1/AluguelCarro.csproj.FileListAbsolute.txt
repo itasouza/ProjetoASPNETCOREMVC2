@@ -39,3 +39,7 @@ C:\Users\PCEstudo\Desktop\AluguelCarro\AluguelCarro\obj\Debug\netcoreapp2.1\Razo
 C:\Users\PCEstudo\Desktop\AluguelCarro\AluguelCarro\obj\Debug\netcoreapp2.1\Razor\Views\NiveisAcessos\Edit.cshtml.g.cs
 C:\Users\PCEstudo\Desktop\AluguelCarro\AluguelCarro\obj\Debug\netcoreapp2.1\Razor\Views\NiveisAcessos\Index.cshtml.g.cs
 C:\Users\PCEstudo\Desktop\AluguelCarro\AluguelCarro\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ModalExclusao.cshtml.g.cs
+C:\Users\PCEstudo\Desktop\AluguelCarro\AluguelCarro\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Atualizar.cshtml.g.cs
+C:\Users\PCEstudo\Desktop\AluguelCarro\AluguelCarro\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Login.cshtml.g.cs
+C:\Users\PCEstudo\Desktop\AluguelCarro\AluguelCarro\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Registro.cshtml.g.cs
+C:\Users\PCEstudo\Desktop\AluguelCarro\AluguelCarro\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Index.cshtml.g.cs
